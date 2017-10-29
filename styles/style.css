@@ -1,0 +1,137 @@
+html {
+	margin: 0;
+}
+
+body {
+    background-color: rgba(242,242,242,1);
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin: 0;
+	
+	color: #0d0d0d;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+
+/*** INDEX PAGE ***/
+
+.index {
+	padding: 50px 50px 0 50px ;
+}
+
+#index-logo {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.author {
+	display: inline-block;
+	width: 49%;
+	text-align: center;
+}
+
+.button {
+    background-color: rgba(38,38,38,1);
+    color: white;
+    padding: 8px 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+	font-family: 'Arial Black';
+	font-variant: small-caps;
+	border: 2px solid;
+    border-radius: 4px;
+	border-color: rgba(38,38,38,1);
+}
+
+.button:hover {
+    background-color: white;
+    color: rgba(38,38,38,1);
+	cursor: pointer;
+}
+
+.textbox {
+	background-color: white;
+	width: 167px; /* to match (160px image + 7px border) */
+	padding: 6px 3px;
+	text-align: center;
+    display: inline-block;
+	font-size: 12px;
+	font-family: Arial;
+	border: 1px solid;
+    border-radius: 4px;
+	border-color: rgba(38,38,38,1);
+}
+
+.author img {
+	width:160px;
+	height:200px; 
+	border: 7px solid; 
+	border-color: white; 
+	box-shadow: 0px 1px 1px 1px #888888;
+	border-radius: 4px;
+}
+
+/*** HEADERS E MENUS ***/
+
+.header {
+	display: inline-block;
+	text-align: left;
+	width: 49%;
+	margin: 20px 20px 20px 0;
+	padding: 0 50px
+}
+
+.login-area {
+	display: inline-block;
+	width: 32%;
+	margin: 20px 0 20px 20px;
+	padding: 0 50px;
+	text-align: right;
+}
+
+.login-area form {
+	display: inline-block;
+	padding: 5px;
+	text-align: right;
+	vertical-align: bottom;
+
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 4px;
+}
+
+.login-area table, .login-area input[type=text], .login-area input[type=password] {
+	font-size: 10pt;
+}
+
+.login-area input[type=submit] {
+	font-size: 8pt;
+	margin: 0 10px;
+}
+
+
+
+
+/*** PAGINAS ***/
+input[type=submit] {
+	display: inline-block;
+
+	background-color: rgba(38,38,38,1);
+	border: 2px solid rgba(38,38,38,1);
+	border-radius: 4px;
+	padding: 1px 3px;
+	
+    color: white;
+    text-align: center;
+	font-family: 'Arial Black';
+	font-variant: small-caps;
+	font-size: 8pt;
+}
+
+input[type=submit]:hover {
+	background-color: white;
+    color: rgba(38,38,38,1);
+	cursor: pointer;
+}
