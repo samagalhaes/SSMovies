@@ -213,7 +213,7 @@ section {
 }
 
 /*** FORMULÁRIOS ***/
-input[type=submit] {
+input[type=submit], .button {
 	display: inline-block;
 
 	background-color: rgba(38,38,38,1);
@@ -226,6 +226,7 @@ input[type=submit] {
 	font-family: 'Arial Black';
 	font-variant: small-caps;
 	font-size: 8pt;
+	text-decoration: none;
 }
 
 input[type=submit]:hover, .button:hover {
@@ -234,7 +235,7 @@ input[type=submit]:hover, .button:hover {
 	cursor: pointer;
 }
 
-.text-input, .login-area input[type=text], .login-area input[type=password], .button {
+.text-input, .login-area input[type=text], .login-area input[type=password] {
 	margin: 2px;
 	padding: 2px;
 
