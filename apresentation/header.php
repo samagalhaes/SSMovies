@@ -17,7 +17,7 @@
         echo "<form method=\"POST\" action=\"../../actions/user/action_login.php\">";
             echo "<table>";
                 echo "<tr>";
-                    echo "<td>username: </td>";
+                    echo "<td>username: </td>" . $_SESSION["user_id"];
                     echo "<td><input type=\"text\" name=\"username\" size=\"16\" placeholder=\"username\"></td>";
                 echo "</tr>";
                 echo "<tr>";
@@ -26,8 +26,8 @@
                 echo "</tr>";
             echo "</table>";
 
+            echo " <input type=\"submit\" name=\"login\" value=\"Login\" autofocus />";
             echo "<input type=\"submit\" name=\"registar\" value=\"Registar\" /> ";
-            echo " <input type=\"submit\" name=\"login\" value=\"Login\" />";
         echo "</form>";
     }
 
@@ -36,6 +36,7 @@
     }
 
     function display_header (){
+   
         include_once("../../database/db_user.php");
 
         echo "<div class=\"header\">";
@@ -51,10 +52,10 @@
             /* Se já houver login, mostra o nome de utilizador */
             else {
                 $users = user_data_db ();
-                $user = pg_fetch ($users, 0);
+                $user = pg_fetch_row ($users, 0);
 
-                echo "<p><a class=\"button\" href=\"#\"></a></p>";
-                echo "<p>Olá, <a href=\"#\">" . $user["nome"] . "</a> CARRINHO </p>";
+                echo "<p><a class=\"button\" href=\"../../actions/user/action_logout.php\">Logout</a></p>";
+                echo "<p>Olá, <a href=\"#\">" . $user[1] . "</a> CARRINHO </p>";
             }
         echo "</div>";
     }
