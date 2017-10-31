@@ -37,7 +37,7 @@
                 <h2>Dados de utilizador</h2>
 
                 <!-- Criação do Formulário de registo -->
-                <form method="POST" action="../../actions/user/action_registar.php" autocomplete="on">
+                <form method="POST" action="../../actions/user/action_register.php" autocomplete="on">
                     <table>
                         <tr>
                             <td>
