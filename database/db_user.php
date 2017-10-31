@@ -44,6 +44,6 @@
 				   
 	pg_exec ($conn, $query2);
 		 
-	return header("Location: ../../pages/films/home.php");
+	return header("Location: ../pages/films/home.php");
 	}
 ?>
