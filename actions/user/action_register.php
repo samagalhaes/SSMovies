@@ -1,6 +1,6 @@
 <?php
     
-	$name = $_POST["first_name"] . " " . $_POST["last_name"];
+    $name = $_POST["first_name"] . " " . $_POST["last_name"];
     $email = $_POST["email"];
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -10,17 +10,17 @@
     $postcode = $_POST["post-code1"] . "-" . $_POST["post-code2"];
     $localidade = $_POST["localidade"];
 	
-	include_once ("../../database/db_connect.php");
+    include_once ("../../database/db_connect.php");
     include_once ("../../database/db_user.php");
 	
-	global $conn;
+    global $conn;
 	
-	if (!isset($conn)){
-            connect_db();
+    if (!isset($conn)){
+        connect_db();
         }
 	
-	if (isset($_POST["registar"])){
-		new_user_db($name, $email, $username, $password, $telephone, $nif, $address, $postcode, $localidade);
+    if (isset($_POST["registar"])){
+        new_user_db($name, $email, $username, $password, $telephone, $nif, $address, $postcode, $localidade);
 	}
 	
 ?>
