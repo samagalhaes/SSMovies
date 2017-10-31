@@ -37,7 +37,7 @@
                 <h2>Dados de utilizador</h2>
 
                 <!-- Criação do Formulário de registo -->
-                <form method="POST" action="#" autocomplete="on">
+                <form method="POST" action="../../actions/user/action_registar.php" autocomplete="on">
                     <table>
                         <tr>
                             <td>
@@ -53,7 +53,7 @@
                                 E-mail
                             </td>
                             <td>
-                                <input type="email" class="text-input" name="email" size = "46" required/>
+                                <input type="email" class="text-input" name="email" size = "46" required />
                             </td>
                         </tr>
                         <tr>
@@ -61,7 +61,7 @@
                                 Nome de utilizador
                             </td>
                             <td>
-                                <input type="text" class="text-input" name="username" size="46" required/>
+                                <input type="text" class="text-input" name="username" size="46" required />
                             </td>
                         </tr>
                         <tr>
@@ -69,7 +69,7 @@
                                 Password
                             </td>
                             <td>
-                                <input type="password" class="text-input" name="password" size="46" autocomplete="off" required/>
+                                <input type="password" class="text-input" name="password" size="46" autocomplete="off" required />
                             </td>
                         </tr>
                         <tr>
@@ -94,13 +94,13 @@
 
                     <p>
                         Morada
-                        <input type="text" class="text-input" name="address" style="width:93%" required/>
+                        <input type="text" class="text-input" name="address" style="width:93%" required />
                     </p>
 
                     <p>
                         Código Postal
-                        <input type="text" class="text-input" name="post-code1" size="4" maxlength="4" style="width:33px" required/> &ndash; 
-                        <input type="text" class="text-input" name="post-code2" size="3" maxlength="3" style="width:33px" required/> 
+                        <input type="text" class="text-input" name="post-code1" size="4" maxlength="4" style="width:33px" required /> &ndash; 
+                        <input type="text" class="text-input" name="post-code2" size="3" maxlength="3" style="width:33px" required /> 
                         <input type="text" class="text-input" name="localidade" required>
                     </p>
 
