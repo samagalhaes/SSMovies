@@ -1,5 +1,6 @@
 <?php
-    
+    include_once("../../actions/common/session.php");
+
     $name = $_POST["first_name"] . " " . $_POST["last_name"];
     $email = $_POST["email"];
     $username = $_POST["username"];
@@ -21,6 +22,11 @@
 	
     if (isset($_POST["registar"])){
         new_user_db($name, $email, $username, $password, $telephone, $nif, $address, $postcode, $localidade);
-	}
-	
+    }
+    elseif (isset($_POST["update"])){
+        update_user_db($name, $email, $username, $password, $telephone, $nif, $address, $postcode, $localidade);
+    }
+    
+    header("Location: ../../pages/user/personal.php");
+   
 ?>
