@@ -1,4 +1,6 @@
 <?php
+    include_once("../../apresentation/menus.php");
+
     function head ($title){
         echo "<head>";
             echo "<meta http-equiv=\"Content-Type\" content=\text/html; charset=utf-8\" />";
@@ -55,48 +57,8 @@
                 $user = pg_fetch_row ($users, 0);
 
                 echo "<p><a class=\"button\" href=\"../../actions/user/action_logout.php\">Logout</a></p>";
-                echo "<p>Olá, <a href=\"#\">" . $user[1] . "</a> CARRINHO </p>";
+                echo "<p>Olá, <a href=\"../../pages/user/personal.php\">" . $user[1] . "</a> CARRINHO </p>";
             }
         echo "</div>";
-    }
-
-    /**
-     * Cria o menu principal
-     * 
-     * @param conn - para perquntar à base de dados quais são os elementos do menu
-     * @param page - para saber qual a página actual activa
-     */
-    function main_menu ($page){
-
-        global $conn;
-        include_once("../../database/db_menu.php");
-
-        $menu = query_menu_db($conn, 0);
-        $num_rows = pg_numrows($menu);
-
-        echo "<nav>";
-            echo "<ul>";
-
-                for ($i=0; $i < $num_rows; $i++){
-                    $menu_element = pg_fetch_assoc($menu);
-
-                    if ($page == $menu_element["nome"]){
-                        echo "<li>
-                                <a class=\"is-active\" href=\"" . $menu_element["url"] . "\">" 
-                                    . $menu_element["nome"]. 
-                                "</a>
-                              </li>";
-                    }
-                    else {
-                        echo "<li>
-                                <a href=\"" . $menu_element["url"] . "\">" 
-                                    . $menu_element["nome"]. 
-                                "</a>
-                              </li>";
-                    }
-                } 
-
-            echo "</ul>";
-        echo "</nav>";
     }
 ?>

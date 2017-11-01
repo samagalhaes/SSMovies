@@ -12,10 +12,12 @@
      *                      - nome do elemento 
      *                      - url
      */
-    function query_menu_db ($conn, $type_menu){
+    function query_menu_db ($type_menu){
+        global $conn;
+
         $query = "SELECT nome, url
                   FROM menu
-                  WHERE menu = 0
+                  WHERE menu = $type_menu
                   ORDER BY id";
 
         return pg_exec($conn, $query);
