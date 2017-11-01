@@ -77,32 +77,41 @@
                                 Telefone
                             </td>
                             <td>
-                                <input type="number" class="text-input" name="telephone" maxlength="9" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                NIF
-                            </td>
-                            <td>
-                                <input type="number" class="text-input" name="nif" maxlength="9" />
+                                <input type="text" class="text-input" name="telephone" size="9" maxlength="9" />
                             </td>
                         </tr>
                     </table>
 
                     <h2>Dados de Facturação</h2>
 
-                    <p>
-                        Morada
-                        <input type="text" class="text-input" name="address" style="width:93%" required />
-                    </p>
-
-                    <p>
-                        Código Postal
-                        <input type="text" class="text-input" name="post-code1" size="4" maxlength="4" style="width:33px" required /> &ndash; 
-                        <input type="text" class="text-input" name="post-code2" size="3" maxlength="3" style="width:33px" required /> 
-                        <input type="text" class="text-input" name="localidade" required>
-                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                NIF
+                            </td>
+                            <td>
+                                <input type="text" class="text-input" name="nif" size="9" maxlength="9" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Morada
+                            </td>
+                            <td>
+                                <input type="text" class="text-input" name="address" style="width:93%" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Código Postal
+                            </td>
+                            <td>
+                                <input type="text" class="text-input" name="post-code1" size="4" maxlength="4" style="width:33px" required /> &ndash; 
+                                <input type="text" class="text-input" name="post-code2" size="3" maxlength="3" style="width:33px" required /> 
+                                <input type="text" class="text-input" name="localidade" required>
+                            </td>
+                        </tr>
+                    </table>
 
                     <!-- Botão de Submit para o registo -->
                     <div style="text-align:right">
