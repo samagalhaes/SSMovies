@@ -36,4 +36,10 @@
         
         return pg_exec($conn, $query);
     }
+
+    function get_films_db($conn) {
+		$query = "SELECT *
+                  FROM filme";
+        return pg_exec($conn, $query);
+	}
 ?>
