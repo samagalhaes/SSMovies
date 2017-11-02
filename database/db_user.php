@@ -31,15 +31,26 @@
 
     function new_user_db ($name, $email, $username, $password, $telephone, $nif, $address, $postcode, $localidade) {
         global $conn;
+        
+        $query = "SELECT *
+				   FROM utilizador
+				   WHERE username = '$username' OR
+						 email = '$email'";
+		 $result = pg_exec ($conn, $query);
+		 $num_rows = pg_numrows($result);
+		 
+		 if($num_rows > 0) {
+			 return NULL;
+		 }
             
-        $query = "SELECT * FROM utilizador";
-        $result = pg_exec ($conn, $query);
-        $numrows = pg_numrows($result);
+        $query2 = "SELECT * FROM utilizador";
+        $result2 = pg_exec ($conn, $query2);
+        $num_rows2 = pg_numrows($result2);
             
-        $id = $numrows+1;
+        $id = $num_rows2+1;
             
             
-        $query2 = "INSERT INTO utilizador (id, 
+        $query3 = "INSERT INTO utilizador (id, 
                                            username, 
                                            nome, 
                                            email, 
@@ -62,7 +73,7 @@
                            '$localidade', 
                            'FALSE')"; 
                     
-        pg_exec ($conn, $query2);
+        pg_exec ($conn, $query3);
     }
     
     function update_user_db ($name, $email, $username, $password, $telephone, $nif, $address, $postcode, $localidade){
