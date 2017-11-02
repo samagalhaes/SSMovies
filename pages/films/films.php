@@ -7,7 +7,7 @@
 <?php
     include_once("../../database/db_connect.php");
     include_once("../../apresentation/header.php");
-	  include_once("../../database/db_film.php");
+	  include_once("../../database/db_films.php");
     connect_db();
     $page_name = "Filmes";
     head($page_name);
