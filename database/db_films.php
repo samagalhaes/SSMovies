@@ -86,4 +86,13 @@
         $result = pg_exec($conn, $query);
         return pg_fetch_assoc($result);
     }
+
+    function delete_film_db ($film_id) {
+        global $conn;
+
+        $query = "DELETE FROM filme
+                  WHERE id = '$film_id'";
+
+        return pg_exec($conn, $query);
+    }
 ?>

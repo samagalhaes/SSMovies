@@ -16,4 +16,9 @@
     if (isset($_GET["editar"])) {
         header("Location: ../../pages/films/edit_film.php?film-id=$film_id");
     }
+
+    if (isset($_GET["remover"])) {
+        delete_film_db ($film_id);
+        header("Location: ../../pages/films/home.php");
+    }
 ?>
