@@ -54,7 +54,7 @@
                     </div>
                 </span>
 
-                <form action="#" method="GET">
+                <form action="../../actions/films/action_film.php" method="GET">
                     <input type="text" name="film_id" value=<?=$film_details["id"]?> hidden>
 
                     <!-- Botão de Submit para o registo -->

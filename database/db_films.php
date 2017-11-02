@@ -37,6 +37,26 @@
         return pg_exec($conn, $query);
     }
 
+    function modify_film_db ($film_id,$nome, $ano, $classificacao_etaria, $duracao, $imdb, $genero, $trailer, $cover, $sinopse, $preco, $stock){
+        global $conn;
+
+        $query = "UPDATE filme 
+                  SET nome                  = '$nome',
+                      ano                   = '$ano',
+                      pontuacao_imdb        = '$imdb',
+                      classificacao_etaria  = '$classificacao_etaria',
+                      duracao               = '$duracao',
+                      sinopse               = '$sinopse',
+                      link_trailer          = '$trailer',
+                      preco                 = '$preco',
+                      quantidade_disponivel = '$stock',
+                      cover                 = '$cover',
+                      genero                = '$genero'
+                  WHERE id = $film_id";
+        
+        return pg_exec($conn, $query);
+    }
+
     function get_films_db($conn) {
         global $conn;
 

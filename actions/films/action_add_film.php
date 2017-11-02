@@ -32,4 +32,18 @@
             header ("Location: ../../pages/films/add_film.php");
         }
     }
+
+    if (isset($_GET["modificar"])){
+        $result = modify_film_db ($_GET["film_id"],$nome, $ano, $classificacao_etaria, $duracao, $imdb, $genero, $trailer, $cover, $sinopse, $preco, $stock);
+
+        if ($result == FALSE){
+            echo "<html><body>";
+            echo "Erro ao criar o filme";
+            echo "</body></html>";
+        }
+        else {
+            $film_id = $_GET["film_id"];
+            header ("Location: ../../pages/films/film_details.php?film-id=$film_id");
+        }
+    }
 ?>
