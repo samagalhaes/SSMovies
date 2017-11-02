@@ -38,8 +38,32 @@
     }
 
     function get_films_db($conn) {
+        global $conn;
+
 		$query = "SELECT *
-                  FROM filme";
+                  FROM filme;";
         return pg_exec($conn, $query);
-	}
+    }
+    
+    function get_film_details_db($film_id) {
+        global $conn;
+
+        $query = "SELECT *
+                  FROM filme
+                  WHERE filme.id = $film_id";
+
+        $result = pg_exec($conn, $query);
+        return pg_fetch_assoc($result);
+    }
+
+    function get_film_genero_db ($film_genero) {
+        global $conn;
+
+        $query = "SELECT *
+                  FROM genero
+                  WHERE id = $film_genero";
+
+        $result = pg_exec($conn, $query);
+        return pg_fetch_assoc($result);
+    }
 ?>

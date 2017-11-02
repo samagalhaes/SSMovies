@@ -37,15 +37,15 @@
                <form action="../../actions/films/action_add_film.php" method="GET">
                    <p>
                        Nome do filme 
-                       <input type="text" name="nome" size="120" required>
+                       <input type="text" class="text-input" name="nome" size="120" required>
                    </p>
                    <table><tr>
                        <td>
-                        Ano <input type="text" name="ano" size="4" maxlength="4" required>
+                        Ano <input type="text" class="text-input" name="ano" size="4" maxlength="4" required>
                        </td>
                        <td>
                         Classificação etária
-                        <Select name="classificacao_etaria" required>
+                        <Select name="classificacao_etaria" class="text-input" required>
                                 <Option value="3">M/3</Option>
                                 <Option value="6">M/6</Option>
                                 <Option value="12">M/12</Option>
@@ -56,15 +56,15 @@
                        </td>
                        <td>
                         Duração
-                        <input type="text" name="duracao" size="3" required/>
+                        <input type="text" class="text-input" name="duracao" size="3" required/>
                        </td>
                        <td>
                         IMDB
-                        <input type="text" name="imdb" size="4">
+                        <input type="text" class="text-input" name="imdb" size="4">
                        </td>
                        <td>
                         Género
-                        <Select name="genero" required>
+                        <Select name="genero" class="text-input" required>
                         <?php 
                                 $generos = lista_generos_db ();
                                 $numgeneros = pg_numrows($generos);
@@ -81,30 +81,31 @@
                     </tr></table>
                     <p>
                         Trailer
-                        <input type="url" size="130" name="trailer">
+                        <input type="url" class="text-input" size="130" name="trailer">
                     </p>
                     <p>
                         Cover
-                        <input type="url" size="130" name="cover" required>
+                        <input type="url" class="text-input" size="130" name="cover" required>
                     </p>
                     <p>
                         Sinopse
                     </p>
                     <p>
-                        <textarea name="sinopse" cols="105" rows="5"></textarea>
+                        <textarea name="sinopse" class="text-input" cols="105" rows="5"></textarea>
                     </p>
                     <p>
                         Preço
-                        <input type="text" size="5" name="preco" placeholder="00.00" required> €
+                        <input type="text" class="text-input" size="5" name="preco" placeholder="00.00" required> €
                     </p>
                     <p>
                         Stock
-                        <input type="number" name="stock" value="1" style="width=10px" required> un.
+                        <input type="number" class="text-input" name="stock" value="1" style="width=10px" required> un.
                     </p>
 
                     <!-- Botão de Submit para o registo -->
                     <div style="text-align:right">
-                    <input type="submit" name="add" value="Adicionar filme"/>
+                        <input type="submit" name="add" value="Adicionar filme"/>
+                    </div>
                </form>
             </div>
         </section>

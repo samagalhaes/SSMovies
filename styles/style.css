@@ -216,11 +216,11 @@ h2 {
 	display: block;
 	position: relative;
 
-	height: 60% !important;
-	overflow: visible;
-	box-sizing: border-box;
+	height: 350px !important;
+	overflow: auto;
 
 	padding: 10px;
+	margin-bottom: 5px;
 	box-sizing: border-box;	
 }
 
@@ -237,23 +237,49 @@ section {
 	border-radius: 4px;
 }
 
+
+/*** FILMES ***/
 .filme {
+	display: inline-block;
 	background-color: white;
 	width: 105px;
 	height:205px; 
+
 	padding: 3px 3px;
-    display: inline-block;
+	margin: 5px;
+	vertical-align: top;
+	overflow: hidden;
+
 	font-size: 9px;
 	font-family: Arial;
+	text-align: center;
+
 	border: 1px solid;
     border-radius: 5px;
 	border-color: rgba(38,38,38,1);
 	box-shadow: 0px 1px 1px 1px #888888;
 }
 
+.filme a{
+	color: black;
+	text-decoration: none;
+}
+
+.filme a:visited {
+	color: black;
+}
+
 .filme img {
-	width: 90px;
+	width: 100px;
 	height: 120px;
+	margin-top: -6px;
+	border-radius: 5px;
+}
+
+.nome-filme {
+	text-align: left;
+	margin: 0 5px;
+	height: 24px;
 }
 
 .cl_etar {
@@ -267,17 +293,71 @@ section {
 	font-family: Arial;
 	display: inline-block;
 	width: 20%;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .ano {
 	font-size: 9px;
 	font-family: Arial;
 	display: inline-block;
-	width: 20%;
+	width: 55%;
+	text-align: left;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*** DETALHES DE FILMES ***/
+#film-details img {
+	display: inline-block;
+	vertical-align: top;
+
+	width: 150px;
+}
+
+#film-details span {
+	display: inline-block;
+	vertical-align: top;
+	
+	width: 85%;
+	margin-left: 10px;
+}
+
+#film-title {
+	font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	color: black;
+	font-size: 18pt;
+
+	margin-top: 0;
+	margin-bottom: 0; 
+}
+
+#sinopse {
+	margin-top: 10px;
+	margin-bottom: 30px;
+
+	text-align: justify;
+}
+
+#trailer {
+	text-align: center;
+}
+
+#trailer iframe {
+	border: 2px solid rgba(38,38,38,1);
+	border-radius: 4px;
+}
+
+#film-particulars {
+	font-size: 9pt;
+	color: rgb(56, 55, 55);
+	margin-top: 0;
 }
 
 /*** FORMULÁRIOS ***/
-input[type=submit], .button {
+input[type=submit], 
+.button {
 	display: inline-block;
 
 	background-color: rgba(38,38,38,1);
@@ -294,17 +374,27 @@ input[type=submit], .button {
 	text-decoration: none;
 }
 
-input[type=submit]:hover, .button:hover {
+input[type=submit]:hover, 
+.button:hover {
 	background-color: white;
     color: rgba(38,38,38,1);
 	cursor: pointer;
 }
 
-.text-input, .login-area input[type=text], .login-area input[type=password] {
+.login-area input[type=text], 
+.login-area input[type=password], {
 	margin: 2px;
 	padding: 2px;
 
 	border: 1px solid rgba(38,38,38,1);
 	border-radius: 3px;
 	text-decoration: none;
+}
+
+.text-input {
+	margin: 2px;
+	padding: 2px;
+
+	border: 1px solid rgba(38,38,38,1);
+	border-radius: 3px;
 }
