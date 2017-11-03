@@ -26,7 +26,30 @@
             <h1 >Filmes</h1>
             <div class="content">
                 <?php
-					$films = get_films_db($conn);
+                    $ano = $_GET["ano"];
+                    $genero1 = $_GET["genero1"];
+                    $genero2 = $_GET["genero2"];
+                    $genero3 = $_GET["genero3"];
+                    $genero4 = $_GET["genero4"];
+                    $genero5 = $_GET["genero5"];
+                    $genero6 = $_GET["genero6"];
+                    $genero7 = $_GET["genero7"];
+                    $genero8 = $_GET["genero8"];
+                    $genero9 = $_GET["genero9"];
+                    $genero10 = $_GET["genero10"];
+                    $genero11 = $_GET["genero11"];
+                    $genero12 = $_GET["genero12"];
+                    $genero13 = $_GET["genero13"];
+                    $genero14 = $_GET["genero14"];
+                    $genero15 = $_GET["genero15"];
+                    $genero16 = $_GET["genero16"];
+                    $genero17 = $_GET["genero17"];
+                    $genero18 = $_GET["genero18"];
+                    $genero19 = $_GET["genero19"];
+                    $genero20 = $_GET["genero20"];
+                    $genero21 = $_GET["genero21"];
+                    $cl_etar = $_GET["cl_etar"];
+                    $films = filter_films_db($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar);
                     $num_rows = pg_numrows($films);
                     
                     /* Adiciona cada um dos filme à página dentro de uma box */
@@ -48,7 +71,8 @@
                                 <p>" 
                                      . money_format('%(#1n', floatval(substr($filme["preco"], 1))) . 
                                 " &euro;</p>
-							  </a></div>";						
+							  </a></div>";
+						
 					}
 				?>
             </div>
