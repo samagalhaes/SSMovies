@@ -12,16 +12,16 @@
         global $conn;
 
         $query = "INSERT INTO filme (nome,
-                                      ano,
-                                      pontuacao_imdb,
-                               classificacao_etaria,
-                               duracao,
-                               sinopse,
-                               link_trailer,
-                               preco,
-                               quantidade_disponivel,
-                               cover,
-                               genero)
+                                     ano,
+                                     pontuacao_imdb,
+                                     classificacao_etaria,
+                                     duracao,
+                                     sinopse,
+                                     link_trailer,
+                                     preco,
+                                     quantidade_disponivel,
+                                     cover,
+                                     genero)
                   VALUES ('$nome',
                           '$ano',
                           '$imdb',

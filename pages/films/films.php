@@ -48,8 +48,7 @@
                                 <p>" 
                                      . money_format('%(#1n', floatval(substr($filme["preco"], 1))) . 
                                 " &euro;</p>
-							  </a></div>";
-						
+							  </a></div>";						
 					}
 				?>
             </div>

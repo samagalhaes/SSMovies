@@ -21,4 +21,8 @@
         delete_film_db ($film_id);
         header("Location: ../../pages/films/home.php");
     }
+
+    if (isset($_GET["comprar"])){
+        header("Location: ../../actions/encomendas/action_add_product.php?film-id=$film_id");
+    }
 ?>

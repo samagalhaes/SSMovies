@@ -58,9 +58,7 @@
                     <input type="text" name="film_id" value=<?=$film_details["id"]?> hidden>
 
                     <!-- Botão de Submit para o registo -->
-
                     <div style="text-align:right">
-
                         <?php
                             if ($_SESSION["user_id"] != NULL){
                                 if (check_admin_db()){
@@ -68,7 +66,7 @@
                                     echo "<input type=\"submit\" name=\"editar\" value=\"Editar filme\"/> ";
                                 }
 
-                                echo " <input type=\"submit\" name=\"Comprar\" value=\"Comprar filme\"/>";
+                                echo " <input type=\"submit\" name=\"comprar\" value=\"Comprar filme\"/>";
                             }
                         ?>
                     </div>

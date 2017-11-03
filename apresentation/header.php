@@ -57,7 +57,7 @@
                 $user = pg_fetch_row ($users, 0);
 
                 echo "<p><a class=\"button\" href=\"../../actions/user/action_logout.php\">Logout</a></p>";
-                echo "<p>Olá, <a href=\"../../pages/user/personal.php\">" . $user[1] . "</a> CARRINHO </p>";
+                echo "<p>Olá, <a href=\"../../pages/user/personal.php\">" . $user[1] . "</a> <a href=\"../../pages/encomendas/carrinho.php\">CARRINHO</a></p>";
             }
         echo "</div>";
     }
