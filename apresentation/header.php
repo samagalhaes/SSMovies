@@ -12,6 +12,7 @@
         
             /* CSS Files */
             echo "<link rel=\"stylesheet\" href=\"../../styles/style.css\">";
+            echo "<link rel=\"stylesheet\" href=\"../../styles/font-awesome.css\">";
         echo "</head>";
     }
 
@@ -57,7 +58,7 @@
                 $user = pg_fetch_row ($users, 0);
 
                 echo "<p><a class=\"button\" href=\"../../actions/user/action_logout.php\">Logout</a></p>";
-                echo "<p>Olá, <a href=\"../../pages/user/personal.php\">" . $user[1] . "</a> <a href=\"../../pages/encomendas/carrinho.php\">CARRINHO</a></p>";
+                echo "<p>Olá, <a href=\"../../pages/user/personal.php\">" . $user[1] . "</a> <a href=\"../../pages/encomendas/carrinho.php\"><i class=\"fa fa-shopping-cart fa-lg\" aria-hidden=\"true\"></i></a></p>";
             }
         echo "</div>";
     }
