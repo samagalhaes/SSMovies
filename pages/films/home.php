@@ -24,7 +24,30 @@
         <section class="left-size">
             <h1 >Últimos Filmes</h1>
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu ipsum, feugiat ac erat ac, aliquam hendrerit ex. Maecenas nisl tortor, dictum et volutpat id, suscipit vitae est. Vestibulum in interdum mi. Morbi viverra nibh in tellus suscipit efficitur ac in enim. Vivamus ultrices volutpat tristique. Phasellus et nunc vehicula, imperdiet nisl quis, varius sem. Praesent dictum pretium imperdiet. Phasellus eu convallis tortor. Aliquam fringilla ipsum magna, in finibus augue mollis eget. Quisque venenatis augue eget purus euismod egestas. Duis dignissim molestie augue, non dictum nisl lacinia at. Donec odio augue, facilisis nec massa eu, interdum tincidunt neque. Donec ac leo scelerisque, consequat felis vel, volutpat mi. Vivamus nulla ante, dictum eu eros nec, efficitur sollicitudin tortor. Donec nunc neque, tempus id interdum eu, pretium quis ante. Donec dictum laoreet velit efficitur blandit.
+                <?php
+					$films = latest_films_db($conn);
+                    
+                    /* Adiciona cada um dos filme à página dentro de uma box */
+					for ($i=0; $i < 10 && $filme = pg_fetch_assoc($films); $i++) {                     
+                        
+                        echo "<div class=\"filme\"><a href=\"../../pages/films/film_details.php?film-id=" . $filme["id"] ."\">
+                                <p>
+                                    <img src=\"" . $filme["cover"] . "\" alt=\"". $filme["nome"] ."\" />
+                                </p>
+                                <p class=\"nome-filme\">" . $filme["nome"] . "</p> 
+                                
+                                <span class=\"ano\">" 
+                                    . $filme["ano"] . 
+                                "</span> 
+                                <span class=\"cl_etar\">M/" 
+                                    . $filme["classificacao_etaria"] . 
+                                "</span>
+                                <p>" 
+                                     . money_format('%(#1n', floatval(substr($filme["preco"], 1))) . 
+                                " &euro;</p>
+							  </a></div>";
+					}
+				?>
             </div>
         </section>
 
