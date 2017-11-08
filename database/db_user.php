@@ -114,4 +114,14 @@
             return 0;
         }
     }
+
+function get_user_name_db($id) {
+		global $conn;
+
+        $query = "SELECT *
+                  FROM utilizador
+                  WHERE id = $id";
+
+        return pg_exec ($conn, $query);
+	}
 ?>
