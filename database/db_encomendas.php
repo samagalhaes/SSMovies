@@ -129,4 +129,14 @@
         
         return pg_exec ($conn, $query);
     }
+
+    function apaga_produto_encomenda_db ($cod_encomenda, $id_filme){
+        global $conn;
+
+        $query = "DELETE FROM encomenda_filme
+                  WHERE cod_encomenda = $cod_encomenda AND
+                        id_filme = $id_filme";
+        
+        return pg_exec ($conn, $query);
+    }
 ?>
