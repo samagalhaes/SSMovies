@@ -87,4 +87,24 @@
 
         return pg_exec($conn, $query);
     }
+
+	function lista_todas_encomendas_db (){
+		global $conn;
+		
+		$query = "SELECT *
+                  FROM encomenda
+				  ORDER BY codigo ASC";
+				  
+		return pg_exec($conn, $query);
+	}
+	
+	function get_encomenda_db ($cod_encomenda) {
+        global $conn;
+
+        $query = "SELECT * 
+                  FROM encomenda
+                  WHERE codigo = $cod_encomenda";
+
+        return pg_exec($conn, $query);
+    }
 ?>
