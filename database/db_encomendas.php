@@ -48,6 +48,16 @@
         return pg_exec ($conn, $query);
     }
 
+    function actualiza_estado_encomenda_db ($cod_encomenda, $estado){
+        global $conn;
+
+        $query = "UPDATE encomenda
+                  SET estado = '$estado'
+                  WHERE codigo = $cod_encomenda";
+
+        return pg_exec($conn, $query);
+    }
+
     function adiciona_produto_db ($cod_encomenda, $film_id, $qt){
         global $conn;
 
@@ -57,5 +67,24 @@
                           '$qt')";
 
         return pg_exec ($conn, $query);
+    }
+
+    function lista_encomenda_produtos_db ($cod_encomenda) {
+        global $conn;
+
+        $query = "SELECT * 
+                  FROM encomenda_filme
+                  WHERE cod_encomenda = $cod_encomenda";
+
+        return pg_exec($conn, $query);
+    }
+
+    function lista_estados_encomenda_db (){
+        global $conn;
+
+        $query = "SELECT *
+                  FROM estado";
+
+        return pg_exec($conn, $query);
     }
 ?>

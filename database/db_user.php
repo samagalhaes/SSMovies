@@ -107,10 +107,10 @@
 
         $admin = pg_fetch_assoc($result);
 
-        if ($admin["admin"] = true){
+        if ($admin["admin"] == 't'){
             return 1;
         }
-        else {
+        else { 
             return 0;
         }
     }

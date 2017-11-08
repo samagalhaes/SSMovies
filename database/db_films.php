@@ -57,6 +57,16 @@
         return pg_exec($conn, $query);
     }
 
+    function update_available_qt_db ($film_id, $qt){
+        global $conn;
+        
+        $query = "UPDATE filme 
+                SET quantidade_disponivel = '$qt'
+                WHERE id = $film_id";
+
+        return pg_exec($conn, $query);
+    }
+
     function get_films_db($conn) {
         global $conn;
 
