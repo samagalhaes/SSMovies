@@ -3,7 +3,7 @@
 
     function head ($title){
         echo "<head>";
-            echo "<meta http-equiv=\"Content-Type\" content=\text/html; charset=utf-8\" />";
+            echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />";
             echo "<meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">";
             echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
 
@@ -38,8 +38,7 @@
         
     }
 
-    function display_header (){
-   
+    function display_header (){   
         include_once("../../database/db_user.php");
 
         echo "<div class=\"header\">";

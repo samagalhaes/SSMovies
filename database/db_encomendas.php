@@ -5,7 +5,8 @@
         $query = "SELECT *
                   FROM encomenda
                   WHERE estado = $estado AND
-                        utilizador = $user_id";
+                        utilizador = $user_id
+                  ORDER BY codigo DESC";
         
         return pg_exec($conn, $query);
     }
@@ -83,7 +84,8 @@
         global $conn;
 
         $query = "SELECT *
-                  FROM estado";
+                  FROM estado
+                  ORDER BY id";
 
         return pg_exec($conn, $query);
     }
@@ -106,5 +108,15 @@
                   WHERE codigo = $cod_encomenda";
 
         return pg_exec($conn, $query);
+    }
+
+    function apaga_produto_encomenda_db ($cod_encomenda, $id_filme){
+        global $conn;
+
+        $query = "DELETE FROM encomenda_filme
+                  WHERE cod_encomenda = $cod_encomenda AND
+                        id_filme = $id_filme";
+        
+        return pg_exec ($conn, $query);
     }
 ?>

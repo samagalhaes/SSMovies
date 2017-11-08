@@ -1,5 +1,4 @@
 <?php
-
     include_once("../../database/db_user.php");
     include_once("../../database/db_connect.php");
 

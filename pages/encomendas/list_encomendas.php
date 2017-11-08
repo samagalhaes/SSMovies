@@ -3,7 +3,7 @@
     check_session ("../../pages/films/home.php");
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <?php
     include_once("../../database/db_connect.php");
@@ -42,7 +42,7 @@
                             $estado_max_id = $estado["id"];
                         }
 
-                        for ($i = 1; $i <= $estado_max_id; $i++){
+                        for ($i = 0; $i <= $estado_max_id; $i++){
                             $encomendas = check_encomenda_estado_db ($_SESSION["user_id"], $i);
 
                             while ($encomenda = pg_fetch_assoc($encomendas)){
@@ -52,6 +52,7 @@
                                     $film_details = get_film_details_db($filme["id_filme"]);
                                     $preco = $preco + floatval(substr($film_details["preco"], 1));
                                 }
+                                
 
                                 echo "<tr style = \"text-align: center\">";
                                     echo "<td> <a href=\"../../pages/encomendas/list_encomenda.php?cod_encomenda=".  $encomenda["codigo"] ."\">" . $encomenda["codigo"] . "</td>";
@@ -61,7 +62,7 @@
                                             echo date("d/m/Y", strtotime($encomenda["data_fim"]));
                                         } 
                                     echo "</td>";
-                                    echo "<td> $preco </td>";
+                                    echo "<td> $preco &euro;</td>";
                                     echo "<td>". pg_fetch_assoc($estados,$i)["designacao"] ."</td>";
                                 echo "</tr>";
                             }

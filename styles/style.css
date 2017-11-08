@@ -2,6 +2,7 @@ html, body {
 	margin: 0;
 	width: 100% !important;
 	height: 100% !important;
+		overflow: hidden;
 }
 
 body {
@@ -61,9 +62,9 @@ body {
 
 .author img {
 	width:160px;
-	height:200px; 
-	border: 7px solid; 
-	border-color: white; 
+	height:200px;
+	border: 7px solid;
+	border-color: white;
 	box-shadow: 0px 1px 1px 1px #888888;
 	border-radius: 4px;
 }
@@ -169,6 +170,7 @@ nav a:hover, .is-active {
 /*** PÁGINAS ***/
 #page-content {
 	margin: 20px 70px 20px 60px;
+	height: 100%;
 }
 
 .fullsize {
@@ -224,12 +226,12 @@ a:hover {
 	display: block;
 	position: relative;
 
-	height: 350px !important;
+	height: 100% !important;
 	overflow: auto;
 
 	padding: 10px;
 	margin-bottom: 5px;
-	box-sizing: border-box;	
+	box-sizing: border-box;
 }
 
 section {
@@ -294,7 +296,7 @@ section {
 	display: inline-block;
 	background-color: white;
 	width: 105px;
-	height:205px; 
+	height:205px;
 
 	padding: 3px 3px;
 	margin: 5px;
@@ -370,7 +372,7 @@ section {
 #film-details span {
 	display: inline-block;
 	vertical-align: top;
-	
+
 	width: 85%;
 	margin-left: 10px;
 }
@@ -382,7 +384,7 @@ section {
 	font-size: 18pt;
 
 	margin-top: 0;
-	margin-bottom: 0; 
+	margin-bottom: 0;
 }
 
 #sinopse {
@@ -408,7 +410,7 @@ section {
 }
 
 /*** FORMULÁRIOS ***/
-input[type=submit], 
+input[type=submit],
 .button {
 	display: inline-block;
 
@@ -416,7 +418,7 @@ input[type=submit],
 	border: 2px solid rgba(38,38,38,1);
 	border-radius: 4px;
 	padding: 1px 3px;
-	
+
     color: white;
     text-align: center;
 	font-family: 'Arial Black', Arial, Helvetica, sans-serif;
@@ -426,17 +428,16 @@ input[type=submit],
 	text-decoration: none;
 }
 
-input[type=submit]:hover, 
+input[type="submit"]:hover,
 .button:hover {
 	background-color: white;
     color: rgba(38,38,38,1);
 	cursor: pointer;
 }
 
-.login-area input[type=text], 
-.login-area input[type=password], {
+input {
 	margin: 2px;
-	padding: 2px;
+	padding: 2px 5px;
 
 	border: 1px solid rgba(38,38,38,1);
 	border-radius: 3px;

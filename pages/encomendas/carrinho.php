@@ -83,8 +83,10 @@
                                         " . $preco*$filme["quantidade"] . " &euro;
                                     </td>
                                     <td>
+                                        <input type=\"text\" name=\"filme_id\" value=\"". $filme["id_filme"] ."  \" hidden/>
+                                        <input type=\"text\" name=\"cod_encomenda\" value=\"". $compra["codigo"] ." \" hidden />
                                         <button type=\"submit\" name=\"confirmar\"/><i class=\"fa fa-check-circle fa-2x\" aria-hidden=\"true\"></i></button>
-                                        <button type=\"submit\" name=\"confirmar\"/><i class=\"fa fa-times-circle fa-2x\" aria-hidden=\"true\"></i></button>
+                                        <button type=\"submit\" name=\"apagar\"/><i class=\"fa fa-times-circle fa-2x\" aria-hidden=\"true\"></i></button>
                                     </td>
                                 </form></tr>";
                         }
