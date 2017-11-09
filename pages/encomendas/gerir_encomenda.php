@@ -79,7 +79,7 @@
                     }
                     echo "</table>";
 					echo "<div style=\"text-align: right; padding-top:15px\">";
-						echo "<form method=\"POST\" action=\"../../actions/encomendas/action_edit_encomenda.php?cod_encomenda=". $_GET["cod_encomenda"] ."\" autocomplete=\"on\">";
+						echo "<form method=\"POST\" action=\"../../actions/encomendas/action_edit_state_encomenda.php?cod_encomenda=". $_GET["cod_encomenda"] ."\" autocomplete=\"on\">";
 						echo "<Select name=\"estado\">";
 												$estados = lista_estados_encomenda_db ();
 												$numestados = pg_numrows($estados);
