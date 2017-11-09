@@ -45,7 +45,7 @@
 					   
 					   for($i=0; $i < $num_rows; $i++) {
 						    $encomenda = pg_fetch_assoc($encomendas);
-							echo "<form method=\"POST\" action=\"../../actions/encomendas/action_edit_encomenda.php?cod_encomenda=". $encomenda["codigo"] ."\" autocomplete=\"on\">";
+							echo "<form method=\"POST\" action=\"../../actions/encomendas/action_edit_state_encomenda.php?cod_encomenda=". $encomenda["codigo"] ."\" autocomplete=\"on\">";
 							echo "<tr style = \"text-align: center\">";
                                     echo "<td> <a href=\"../../pages/encomendas/gerir_encomenda.php?cod_encomenda=".  $encomenda["codigo"] ."\">" . $encomenda["codigo"] . "</td>";
                                     echo "<td>" . date("d/m/Y", strtotime($encomenda["data_inicio"]))  . "</td>";
