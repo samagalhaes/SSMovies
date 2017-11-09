@@ -115,4 +115,12 @@ function filter_films_db($ano, $genero1, $genero2, $genero3, $genero4, $genero5,
 				 AND classificacao_etaria = $cl_etar";
 		return pg_exec($conn, $query);
 	}
+
+function latest_films_db($conn) {
+		global $conn;
+		$query = "SELECT *
+                  FROM filme
+				  ORDER BY id DESC";
+        return pg_exec($conn, $query);
+	}
 ?>
