@@ -41,7 +41,7 @@
                <form action="../../actions/films/action_add_film.php" method="GET">
                    <p>
                        Nome do filme 
-                       <input type="text" class="text-input" name="nome" size="120" value = <?php echo "\"" . $film_details["nome"] . "\""?> required>
+                       <input type="text" class="text-input" name="nome" size="120" style="width: 85%" value = <?php echo "\"" . $film_details["nome"] . "\""?> required>
                    </p>
                    <table><tr>
                        <td>
@@ -64,7 +64,7 @@
                                     <?php
                                         if ($film_details["classificacao_etaria"] == 12)
                                             echo "Selected"
-                                    ?></Option>
+                                    ?>>M/12</Option>
                                 <Option value="14"
                                     <?php
                                         if ($film_details["classificacao_etaria"] == 14)
@@ -115,17 +115,17 @@
                     </tr></table>
                     <p>
                         Trailer
-                        <input type="url" class="text-input" size="130" value = <?=$film_details["link_trailer"]?> name="trailer">
+                        <input type="url" class="text-input" size="130" style="width: 91%" value = <?=$film_details["link_trailer"]?> name="trailer">
                     </p>
                     <p>
                         Cover
-                        <input type="url" class="text-input" size="130" name="cover" value = <?=$film_details["cover"]?> required>
+                        <input type="url" class="text-input" size="130" name="cover" style="width: 91%" value = <?=$film_details["cover"]?> required>
                     </p>
                     <p>
                         Sinopse
                     </p>
                     <p>
-                        <textarea name="sinopse" class="text-input" cols="105" rows="5"><?= $film_details["sinopse"]?></textarea>
+                        <textarea name="sinopse" class="text-input" style="width: 96%" cols="105" rows="5"><?= $film_details["sinopse"]?></textarea>
                     </p>
                     <p>
                         Preço

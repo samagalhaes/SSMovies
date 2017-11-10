@@ -120,23 +120,32 @@
         return pg_exec ($conn, $query);
     }
 
-    function apaga_produto_encomenda_db ($cod_encomenda, $id_filme){
+    function list_encomendas_estado_db ($user_id){
         global $conn;
 
-        $query = "DELETE FROM encomenda_filme
-                  WHERE cod_encomenda = $cod_encomenda AND
-                        id_filme = $id_filme";
-        
-        return pg_exec ($conn, $query);
+        $query = "SELECT codigo, utilizador, data_inicio, data_fim, designacao AS estado
+                  FROM encomenda
+                  JOIN estado ON
+                       estado = estado.id
+                  WHERE utilizador = $user_id";
+
+        return pg_exec($conn, $query);
     }
 
-    function apaga_produto_encomenda_db ($cod_encomenda, $id_filme){
+    function add_final_date_db ($cod_encomenda, $write) {
         global $conn;
 
-        $query = "DELETE FROM encomenda_filme
-                  WHERE cod_encomenda = $cod_encomenda AND
-                        id_filme = $id_filme";
-        
-        return pg_exec ($conn, $query);
+        if (!$write){
+            $query = "UPDATE encomenda
+                      SET data_fim = 'now'
+                      WHERE codigo = $cod_encomenda";
+        }
+        else{
+            $query = "UPDATE encomenda
+                      SET data_fim = NULL
+                      WHERE codigo = $cod_encomenda";
+        }    
+
+        return pg_exec($conn, $query);
     }
 ?>

@@ -30,6 +30,10 @@
                 <?php
                     /* Pergunta à base de dados qua é a compra ainda em aberto */
                     $encomendas = check_encomenda_estado_db ($_SESSION["user_id"], 1);
+                    if (!pg_numrows($encomendas)){
+                        cria_nova_encomenda_db ($_SESSION["user_id"]);
+                        $encomendas = check_encomenda_estado_db ($_SESSION["user_id"], 1);
+                    }
 
                     if (pg_numrows($encomendas)) {
                         $compra = pg_fetch_assoc($encomendas);

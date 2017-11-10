@@ -37,7 +37,7 @@
                <form action="../../actions/films/action_add_film.php" method="GET">
                    <p>
                        Nome do filme 
-                       <input type="text" class="text-input" name="nome" size="120" required>
+                       <input type="text" class="text-input" name="nome" style="width: 85%" required>
                    </p>
                    <table><tr>
                        <td>
@@ -81,17 +81,17 @@
                     </tr></table>
                     <p>
                         Trailer
-                        <input type="url" class="text-input" size="130" name="trailer">
+                        <input type="url" class="text-input" style="width: 91%" name="trailer">
                     </p>
                     <p>
                         Cover
-                        <input type="url" class="text-input" size="130" name="cover" required>
+                        <input type="url" class="text-input" style="width: 91%" name="cover" required>
                     </p>
                     <p>
                         Sinopse
                     </p>
                     <p>
-                        <textarea name="sinopse" class="text-input" cols="105" rows="5"></textarea>
+                        <textarea name="sinopse" class="text-input" cols="105" rows="5" style="width: 96%"></textarea>
                     </p>
                     <p>
                         Preço
@@ -99,7 +99,7 @@
                     </p>
                     <p>
                         Stock
-                        <input type="number" class="text-input" name="stock" value="1" style="width=10px" required> un.
+                        <input type="number" class="text-input" name="stock" value="1" style="width:62px" required> un.
                     </p>
 
                     <!-- Botão de Submit para o registo -->

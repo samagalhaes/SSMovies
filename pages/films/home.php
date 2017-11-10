@@ -7,6 +7,7 @@
 <?php
     include_once("../../database/db_connect.php");
     include_once("../../apresentation/header.php");
+    include_once("../../database/db_films.php");
 
     connect_db();
 
@@ -23,12 +24,12 @@
     <div id="page-content">
         <section class="left-size">
             <h1 >Últimos Filmes</h1>
-            <div class="content">
+            <div class="content" id="table-films">
                 <?php
 					$films = latest_films_db($conn);
                     
                     /* Adiciona cada um dos filme à página dentro de uma box */
-					for ($i=0; $i < 10 && $filme = pg_fetch_assoc($films); $i++) {                     
+					for ($i=0; $i < 6 && $filme = pg_fetch_assoc($films); $i++) {                     
                         
                         echo "<div class=\"filme\"><a href=\"../../pages/films/film_details.php?film-id=" . $filme["id"] ."\">
                                 <p>

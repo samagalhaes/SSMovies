@@ -2,7 +2,7 @@ html, body {
 	margin: 0;
 	width: 100% !important;
 	height: 100% !important;
-		overflow: hidden;
+	overflow: hidden;
 }
 
 body {
@@ -18,7 +18,8 @@ body {
 /*** INDEX PAGE ***/
 
 .index {
-	padding: 50px 50px 0 50px ;
+	padding: 30px 50px 0 50px ;
+	width: 100%;
 }
 
 #index-logo {
@@ -149,9 +150,15 @@ nav a:hover, .is-active {
 }
 
 #secondary-menu li{
+	list-style-type: none;
 	list-style: '-';
-	padding:5px;
+	padding:10px;
 	margin: 0;
+}
+
+#secondary-menu li:before {
+	content: '-';
+	padding-right: 5px;
 }
 
 #secondary-menu a{
@@ -226,7 +233,7 @@ a:hover {
 	display: block;
 	position: relative;
 
-	height: 100% !important;
+	height: 92%;
 	overflow: auto;
 
 	padding: 10px;
@@ -253,6 +260,13 @@ section {
 	padding: 20px;
 
 	box-sizing: border-box;
+}
+
+.download {
+	display: inline-block;
+	width: 33%;
+	text-align: center;
+	padding-top: 30px;
 }
 
 /*** TABELAS ***/
@@ -295,15 +309,15 @@ section {
 .filme {
 	display: inline-block;
 	background-color: white;
-	width: 105px;
-	height:205px;
+	width: 125px;
+	height:225px;
 
 	padding: 3px 3px;
 	margin: 5px;
 	vertical-align: top;
 	overflow: hidden;
 
-	font-size: 9px;
+	font-size: 12px;
 	font-family: Arial;
 	text-align: center;
 
@@ -323,9 +337,9 @@ section {
 }
 
 .filme img {
-	width: 100px;
-	height: 120px;
-	margin-top: -6px;
+	width: 120px;
+	height: 130px;
+	margin-top: -8px;
 	border-radius: 5px;
 }
 
@@ -342,7 +356,7 @@ section {
 	border-radius: 5px;
 	padding: 5px 5px;
 	width: 20px;
-	font-size: 9px;
+	font-size: 10px;
 	font-family: Arial;
 	display: inline-block;
 	width: 20%;
@@ -351,13 +365,17 @@ section {
 }
 
 .ano {
-	font-size: 9px;
+	font-size: 12px;
 	font-family: Arial;
 	display: inline-block;
 	width: 55%;
 	text-align: left;
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+#table-films {
+	text-align: center;
 }
 
 /*** DETALHES DE FILMES ***/

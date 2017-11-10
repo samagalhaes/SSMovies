@@ -24,7 +24,7 @@
     <div id="page-content">
         <section class="left-size">
             <h1 >Filmes</h1>
-            <div class="content">
+            <div class="content" id="table-films">
                 <?php
 					$films = get_films_db($conn);
                     $num_rows = pg_numrows($films);

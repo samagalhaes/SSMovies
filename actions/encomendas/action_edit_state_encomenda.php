@@ -10,6 +10,13 @@
 	
 	if(isset($_POST["confirmar"])) {
 		actualiza_estado_encomenda_db($cod_encomenda, $estado);
+		if ($estado == 5){
+			add_final_date_db ($cod_encomenda, 0);
+		}
+		else {
+			add_final_date_db ($cod_encomenda, 1);
+		}
+
 		header("Location: ../../pages/encomendas/gerir_encomendas.php");
 	}
 	

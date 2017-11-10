@@ -40,8 +40,7 @@
                         Duração: <?=$film_details["duracao"]?>min. |
                         IMDB: <?=$film_details["pontuacao_imdb"]?>
                     </p>
-                    <p>
-                        Preço: 
+                    <p> 
                         <?=
                             money_format('%(#1n', floatval(substr($film_details["preco"], 1)))
                         ?> €
