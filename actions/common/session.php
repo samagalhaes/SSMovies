@@ -6,6 +6,7 @@
     function check_session ($path) {
         if ($_SESSION["user_id"] == NULL){
             header("Location: $path");
+            die();
         }
     }
     
@@ -14,6 +15,7 @@
 
         if (!check_admin_db()){
             header("Location: $path");
+            die();
         }
     }
 
