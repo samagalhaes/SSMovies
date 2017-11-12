@@ -34,10 +34,6 @@
         echo "</form>";
     }
 
-    function login_id (){
-        
-    }
-
     function display_header (){   
         include_once("../../database/db_user.php");
 
