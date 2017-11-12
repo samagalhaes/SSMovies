@@ -116,11 +116,22 @@ function filter_films_db($ano, $genero1, $genero2, $genero3, $genero4, $genero5,
 		return pg_exec($conn, $query);
 	}
 
-function latest_films_db($conn) {
+function latest_films_db() {
 		global $conn;
 		$query = "SELECT *
                   FROM filme
 				  ORDER BY id DESC";
         return pg_exec($conn, $query);
-	}
+    }
+    
+function search_db ($search_term){
+    global $conn;
+
+    $query = "SELECT *
+              FROM filme
+              WHERE (nome LIKE '%". $search_term ."%') OR
+                    (sinopse LIKE '%". $search_term ."%')";
+
+    return pg_exec($conn, $query);
+}
 ?>

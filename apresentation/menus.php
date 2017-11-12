@@ -1,4 +1,14 @@
 <?php
+
+    function search_bar (){
+        ?>
+            <form action="../../pages/films/search.php" method="GET">
+                <input type="text" name="search" placeholder="Pesquisar..." id="search-bar">
+                <button type="submit" id="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+        <?php
+        }
+
     /**
      * Cria o menu principal
      * 
@@ -34,6 +44,16 @@
                     }
                 } 
             echo "</ul>";
+
+            ?>
+            
+            <div id="search-area">
+                <?php
+                    search_bar();
+                ?>
+            </div>
+
+            <?php
         echo "</nav>";
     }
 
