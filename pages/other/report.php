@@ -11,7 +11,7 @@
 
     connect_db();
 
-    $page_name = "Sobre Nós";
+    $page_name = "Relatório";
     head($page_name);
 ?>
 
@@ -30,15 +30,15 @@
                 </p>
 
                 <div class="download">
-                    <a href="../../files/mockup.pptx"><img src="../../img/report/ppt.png" alt="Mockup PowerPoint"></a>
+                    <a href="<?= $BASE_URL ?>files/mockup.pptx"><img src="../../img/report/ppt.png" alt="Mockup PowerPoint"></a>
                 </div>
 
                 <div class="download">
-                    <a href="../../files/mockup.pptx"><img src="../../img/report/code.png" alt="Mockup PowerPoint"></a>
+                    <a href="<?= $BASE_URL ?>files/code.zip"><img src="../../img/report/code.png" alt="Código PHP"></a>
                 </div>
 
                 <div class="download">
-                    <a href="../../files/mockup.pptx"><img src="../../img/report/css.png" alt="Mockup PowerPoint"></a>
+                    <a href="<?= $BASE_URL ?>styles/style.css"><img src="../../img/report/css.png" alt="Código CSS"></a>
                 </div>
 
             </div>
