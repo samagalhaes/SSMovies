@@ -143,6 +143,25 @@ nav a:hover, .is-active {
 	text-decoration: underline;
 }
 
+#search-area {
+	display: inline-block;
+	width: 55%;
+	height: 30px;
+	text-align: right;
+}
+#search-bar {
+	height: 25px;
+
+	box-shadow: -1px -1px 8px inset ;
+	border-radius: 6px;
+}
+
+#search-submit {
+	margin-left: -35px;
+	color: black;
+	cursor: pointer;
+}
+
 #secondary-menu {
 	padding: 5px;
 	padding-top: 0;
@@ -470,7 +489,7 @@ input {
 	border-radius: 3px;
 }
 
-.list button, .check {
+.list button, .check, button#search-submit {
 	background: none;
 	border: 0;
 	cursor: pointer;
