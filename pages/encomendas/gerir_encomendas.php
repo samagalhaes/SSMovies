@@ -57,7 +57,7 @@
 											$user = get_user_name_db($encomenda["utilizador"]);
 											$user_name = pg_fetch_assoc($user)["nome"];
                                     echo "<td>$user_name</td>";
-									echo "<td><Select name=\"estado\">";
+									echo "<td><Select name=\"estado\" class=\"text-input\">";
 											$estados = lista_estados_encomenda_db ();
 											$numestados = pg_numrows($estados);
 
@@ -76,12 +76,9 @@
 									echo "</Select>";
                                     echo "<td><button type=\"submit\" name=\"confirmar\"/><i class=\"fa fa-check-circle fa-2x\" aria-hidden=\"true\"></i></button></td>";
                             echo "</tr>";
-							echo "</form>";
-								
+							echo "</form>";		
 					   }
-
                     ?>
-
                 </table>
             </div>
         </section>
