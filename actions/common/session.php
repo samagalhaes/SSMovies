@@ -2,8 +2,8 @@
     include_once("../../database/db_user.php");
     include_once("../../database/db_connect.php");
 
-    $BASE_DIR = "/usr/users2/mieec2013/up201304932/public_html/trabalhosSiem/TrabalhoPHP/";
-    $BASE_URL = "https://gnomo.fe.up.pt/~up201304932/trabalhosSiem/TrabalhoPHP/";
+    $BASE_DIR = "/usr/users2/mieec2013/up201304932/public_html/trabalhosSiem/TrabalhoPHP-1/";
+    $BASE_URL = "https://gnomo.fe.up.pt/~up201304932/trabalhosSiem/TrabalhoPHP-1/";
 
     /* Permite bloquear páginas com acesso restrito a utilizadores com login efectuado */
     function check_session ($path) {
