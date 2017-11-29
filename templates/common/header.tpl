@@ -13,14 +13,14 @@
       <div id="logo">
         <img src="{$BASE_URL}img/logo/logo.png" alt="SS Movies">
       </div>
-
-      <nav>
-        <ul>
-          {foreach $mainMenu as $menuItem}
-            <li>
-              <a href="{$BASE_URL} {$menuItem.url}">{$menuItem.nome}</a>
-            </li>
-          {/foreach}
-        </ul>
-      </nav>
     </header>
+
+		<nav>
+      <ul>
+        {foreach $mainMenu as $menuItem}
+          <li>
+            <a href="{$BASE_URL} {$menuItem.url}">{$menuItem.nome}</a>
+          </li>
+        {/foreach}
+      </ul>
+    </nav>
