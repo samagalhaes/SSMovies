@@ -4,12 +4,13 @@ html {
 
 body {
 display: grid;
-grid-template-columns: 1fr 20em;
-grid-template-rows: auto 1fr auto;
+grid-template-columns: 1fr 55em 20em 1fr;
+grid-template-rows: auto auto 1fr auto;
 
-grid-template-areas: "header header"
-                     "content aside"
-                     "footer footer";
+grid-template-areas: "header header header header"
+					 "nav nav nav nav"
+                     ". content aside ."
+                     "footer footer footer footer";
 
 font-family: Arial;
 color: black;
@@ -18,6 +19,10 @@ margin: 0;
 
 header {
 grid-area: header;
+}
+
+body > nav {
+grid-area: nav;
 }
 
 section {
@@ -34,39 +39,43 @@ grid-area: footer;
 
 /*** HEADER ***/
 header {
-margin: 2em 3em;
+margin: 1em 3em;
 }
 
 header #logo img{
 height: 100px;
 }
 
-header nav {
+body > nav {
 background-color: black;
 margin: 0 0;
 width: 100%;
 }
 
-header nav ul {
+body > nav ul {
 list-style-type: none;
+margin: 0;
 
 font-family: 'Arial Black', Arial;
 }
 
-header nav ul li {
+body > nav ul li {
 display: inline-block;
-padding: 1em 1em;
+padding: 0.7em 1em;
 border-right: 1px solid white;
 }
 
-header nav ul a {
+body > nav ul a {
 color: white;
 text-decoration: none;
 }
 
+body > nav ul a:hover {
+text-decoration: underline;
+}
+
 /*** PAGES ***/
-section {
-width: 40em;
+body > section {
 margin: 1em auto 0 auto;
 padding: 1em;
 
@@ -86,9 +95,8 @@ padding: 0.5em;
 box-sizing: border-box;
 }
 
-aside {
-width: 10em;
-margin: 1em auto 0 0;
+body > aside {
+margin: 1em auto 0 auto;
 border: 1px solid black;
 border-radius: 4px;
 padding: 1em;
