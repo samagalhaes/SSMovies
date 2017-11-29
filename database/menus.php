@@ -16,7 +16,8 @@
         $stmt = $conn->prepare("SELECT nome, url
                                 FROM menu
                                 WHERE menu = ?
-                                ORDER BY id");
+                                ORDER BY id
+																LIMIT 6");
         $stmt->execute(array($typeMenu));
 
         return $stmt->fetchAll();

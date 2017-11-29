@@ -3,6 +3,7 @@
   $BASE_URL = "https://gnomo.fe.up.pt/~up201304932/trabalhosSiem/TrabalhoPHP-2/";
 
   include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
+	include_once($BASE_DIR . 'database/menus.php');
 
   /* Database connection */
   $conn = new PDO('pgsql:host=db.fe.up.pt;dbname=siem1742', 'siem1742', 'LrYaFMWy');
@@ -16,4 +17,8 @@
 	$smarty->compile_dir = $BASE_DIR . 'templates_c/';
 
 	$smarty->assign ('BASE_URL', $BASE_URL);
+
+	/* Query main menu */
+  $mainMenu = listMenuItens(0);
+	$smarty->assign ('mainMenu', $mainMenu);
 ?>

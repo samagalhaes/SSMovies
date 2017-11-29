@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-17 16:36:38
+/* Smarty version 3.1.30, created on 2017-11-29 10:35:47
   from "/usr/users2/mieec2013/up201304932/public_html/trabalhosSiem/TrabalhoPHP-2/templates/films/home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a0f1016dacf96_41944975',
+  'unifunc' => 'content_5a1e8d83e131f1_53693877',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0937cbc349fb22a93931f2b04e728af67237f5fb' => 
     array (
       0 => '/usr/users2/mieec2013/up201304932/public_html/trabalhosSiem/TrabalhoPHP-2/templates/films/home.tpl',
-      1 => 1510936595,
+      1 => 1511951744,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5a0f1016dacf96_41944975 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a1e8d83e131f1_53693877 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:common/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -32,7 +32,32 @@ $_smarty_tpl->_subTemplateRender("file:common/header.tpl", $_smarty_tpl->cache_i
     Últimos Filmes
   </h1>
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet varius urna sit amet ultrices. Donec in mattis velit, malesuada posuere urna. Praesent feugiat pharetra sagittis. Cras ultricies ornare tellus id egestas. Nullam rhoncus viverra quam, eget sollicitudin felis commodo ut. Suspendisse facilisis pellentesque luctus. Proin porttitor nunc non nunc venenatis luctus. Proin in sem ac lectus volutpat lacinia tempor vitae risus. Duis sit amet dolor malesuada, posuere nisi et, posuere elit. Praesent volutpat mollis ultricies. Nam tincidunt venenatis condimentum. Nunc consequat ultricies enim, quis aliquet nunc pulvinar vel. Pellentesque venenatis elit at aliquam pharetra. Etiam cursus non est sed sodales. 
+	<section>
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['latestFilms']->value, 'film');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['film']->value) {
+?>
+			<section class="film-box">
+				<img src=<?php echo $_smarty_tpl->tpl_vars['film']->value['cover'];?>
+ alt="<?php echo $_smarty_tpl->tpl_vars['film']->value['nome'];?>
+">
+				<p class="nome"> <?php echo $_smarty_tpl->tpl_vars['film']->value['nome'];?>
+ </p>
+				<div>
+					<span class="ano"> <?php echo $_smarty_tpl->tpl_vars['film']->value['ano'];?>
+ </span>
+					<span class="classificacaoEtaria"> <?php echo $_smarty_tpl->tpl_vars['film']->value['classificacao_etaria'];?>
+ </span>
+				</div>
+			</section>	
+		<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+	</section>
 
 </section>
 
@@ -41,10 +66,10 @@ $_smarty_tpl->_subTemplateRender("file:common/header.tpl", $_smarty_tpl->cache_i
     Dados de Login
   </h1>
 
-  jkbçljºç
-  ljkbçdsa
-
-  kljbdsvjd
+  <section>
+		username: user
+		password: user
+	</section>
 
   kndlvks
 </aside>
