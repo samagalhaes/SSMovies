@@ -1,0 +1,95 @@
+html {
+  margin: 0;
+}
+
+body {
+display: grid;
+grid-template-columns: 1fr 20em;
+grid-template-rows: auto 1fr auto;
+
+grid-template-areas: "header header"
+                     "content aside"
+                     "footer footer";
+
+font-family: Arial;
+color: black;
+margin: 0;
+}
+
+header {
+grid-area: header;
+}
+
+section {
+grid-area: content;
+}
+
+aside {
+grid-area: aside;
+}
+
+footer {
+grid-area: footer;
+}
+
+/*** HEADER ***/
+header {
+margin: 2em 3em;
+}
+
+header #logo img{
+height: 100px;
+}
+
+header nav {
+background-color: black;
+margin: 0 0;
+width: 100%;
+}
+
+header nav ul {
+list-style-type: none;
+
+font-family: 'Arial Black', Arial;
+}
+
+header nav ul li {
+display: inline-block;
+padding: 1em 1em;
+border-right: 1px solid white;
+}
+
+header nav ul a {
+color: white;
+text-decoration: none;
+}
+
+/*** PAGES ***/
+section {
+width: 40em;
+margin: 1em auto 0 auto;
+padding: 1em;
+
+border: 1px solid black;
+border-radius: 4px;
+background-color: white;
+}
+
+h1 {
+font-family: 'Arial Black', Arial;
+font-size: 1em;
+color: white;
+background-color: black;
+
+margin: -1em -1em 1em -1em;  
+padding: 0.5em;
+box-sizing: border-box;
+}
+
+aside {
+width: 10em;
+margin: 1em auto 0 0;
+border: 1px solid black;
+border-radius: 4px;
+padding: 1em;
+}

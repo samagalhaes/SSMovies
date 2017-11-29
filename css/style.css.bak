@@ -1,0 +1,94 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    overflow: hidden;
+
+}
+
+body {
+    background-color:rgb(242, 242,242);
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    color: #0d0d0d;
+}
+
+/*** CABEÇALHOS ***/
+header {
+    width: 100%;
+    margin: 20px;
+}
+
+#logo {
+    width: 49%;
+    text-align: left;
+}
+
+#logo img{
+    height: 100px;
+}
+
+/*** BARRAS NAVEGAÇÃO  ***/
+
+nav {
+    display: block;
+	background-color: rgb(38,38,38);
+	width: 100%;
+    margin: 0;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav li{
+    display: inline-block;
+    
+    border-right: 1px solid white;
+    padding: 10px;
+}
+nav li:last-child {
+    border-right: 0;    
+}
+
+nav a {
+    font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 12pt;
+}
+
+/*** PÁGINAS ***/
+section {
+    margin: 25px;
+    padding: 10px;
+    width: 100%;
+
+    background-color: white;
+    
+    border: 1px solid rgb(38,38,38);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+h1 {
+    display: block;
+    width: 100% !important;
+
+    margin: -10px;
+
+    background-color: rgb(38,38,38);
+    border: 1px solid rgb(38,38,38);
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+    font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 12pt;
+}
