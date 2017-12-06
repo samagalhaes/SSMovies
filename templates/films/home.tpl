@@ -5,18 +5,16 @@
     Últimos Filmes
   </h1>
 
-	<section>
-		{foreach $latestFilms as $film}
-			<section class="film-box">
-				<img src={$film.cover} alt="{$film.nome}">
-				<p class="nome"> {$film.nome} </p>
-				<div>
-					<span class="ano"> {$film.ano} </span>
-					<span class="classificacaoEtaria"> {$film.classificacao_etaria} </span>
-				</div>
-			</section>	
-		{/foreach}
-	</section>
+<section class="flexbox">
+	{foreach $films as $film}
+		<section class="filmbox">
+			<img src="{$film.cover}" alt="{$film.nome}" height="150px">
+			<div class="filmname">{$film.nome}</div>
+			<div class="filmyear">{$film.ano}</div><div class="filmetar">{$film.classificacao_etaria}</div>
+			<div class="filmpreco">{$film.preco}</div>
+		</section>
+	{/foreach}
+  </section>
 
 </section>
 
@@ -25,12 +23,13 @@
     Dados de Login
   </h1>
 
-  <section>
-		username: user
-		password: user
-	</section>
+  <b>Conta de Utilizador</b>
+	<br><b>Username:</b> user
+	<br><b>Password:</b> user
 
-  kndlvks
+	<p><b>Conta de Administrador</b>
+	<br><b>Username:</b> admin
+	<br><b>Password:</b> admin
 </aside>
 
 {include file='common/footer.tpl'}
