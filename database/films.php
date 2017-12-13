@@ -2,14 +2,15 @@
 	/**
 	* Query the last films
 	*/
-  function listLatestFilms (){
-    global $conn;
+   function listLatestFilms ($qt){
+        global $conn;
 
-    $stmt = $conn->prepare("SELECT *
-                            FROM filme
-                            ORDER BY id DESC");
-    $stmt->execute();
+        $stmt = $conn->prepare("SELECT *
+                                FROM filme
+                                ORDER BY id DESC
+								LIMIT ?");
+        $stmt->execute(array($qt));
 
-    return $stmt->fetchAll();
-  } 
+        return $stmt->fetchAll();
+    }
 ?>
