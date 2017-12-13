@@ -4,7 +4,7 @@ html {
 
 body {
 display: grid;
-grid-template-columns: 1fr 60em 20em 1fr;
+grid-template-columns: 1fr 50em 17em 1fr;
 grid-template-rows: auto auto 1fr auto;
 
 grid-template-areas: "header header header header"
@@ -39,7 +39,7 @@ grid-area: footer;
 
 /*** HEADER ***/
 header {
-margin: 1em 3em;
+margin: 1em 8em 1em 3em;
 }
 
 header #logo img{
@@ -47,7 +47,7 @@ height: 100px;
 }
 
 body > nav {
-background-color: black;
+background-color: rgba(38,38,38,1);
 margin: 0 0;
 width: 100%;
 }
@@ -76,7 +76,7 @@ text-decoration: underline;
 
 /*** PAGES ***/
 body > section {
-margin: 1em auto 0 auto;
+margin: 1em 1em 0 0;
 padding: 1em;
 
 border: 1px solid black;
@@ -88,7 +88,7 @@ h1 {
 font-family: 'Arial Black', Arial;
 font-size: 1em;
 color: white;
-background-color: black;
+background-color: rgba(38,38,38,1);
 
 margin: -1em -1em 1em -1em;  
 padding: 0.5em;
@@ -96,10 +96,27 @@ box-sizing: border-box;
 }
 
 body > aside {
-margin: 1em auto 0 auto;
+margin: 1em 0 0 1em;
 border: 1px solid black;
 border-radius: 4px;
 padding: 1em;
+}
+
+#loginData{
+	font-size: 0.9em;
+}
+
+#loginData #user{
+	margin-bottom: 3em;
+}
+
+#loginData p {
+	margin: 0.5em 0;
+}
+
+.title {
+	font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+	font-variant: small-caps;
 }
 
 .filmbox {
@@ -113,7 +130,7 @@ padding: 1em;
 	vertical-align: top;
 	overflow: hidden;
 
-	font-size: 12px;
+	font-size: 0.75em;
 	font-family: Arial;
 	text-align: center;
 
@@ -135,7 +152,6 @@ padding: 1em;
 }
 
 .filmyear {
-	font-size: 12px;
 	font-family: Arial;
 	display: inline-block;
 	width: 55%;
@@ -150,7 +166,7 @@ padding: 1em;
 	border-radius: 5px;
 	padding: 0.5em;
 	width: 2em;
-	font-size: 10px;
+	font-size: 0.9em;
 	font-family: Arial;
 	display: inline-block;
 	width: 20%;
@@ -164,10 +180,6 @@ padding: 1em;
 .filmpreco {
 	margin: 1.5em 0;
 	position: relative;
-    right: 0.4em;
-}
-.filmpreco::first-letter {
-	visibility: hidden;
 }
 
 .filmpreco:after {
@@ -178,5 +190,75 @@ padding: 1em;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
+	margin: 0 0 0 0.55em;
+}
+
+#login {
+	display: inline-block;
+	width: 32%;
+	text-align: right;
+	align-self: center;
+}
+
+#login form {
+	display: inline-block;
+	padding: 0.3em;
+	text-align: right;
+	vertical-align: bottom;
+
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 4px;
+}
+
+#login table, #login input[type=text], #login input[type=password] {
+	font-size: 0.8em;
+}
+
+#login input[type=submit] {
+	font-size: 0.66em;
+	margin: 0 0.2em;
+}
+
+#login p {
+	margin: 0;
+}
+
+input {
+	margin: 0.2em;
+	padding: 0.1em 0.4em;
+
+	border: 1px solid rgba(38,38,38,1);
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+input[type=submit] {
+	display: inline-block;
+
+	background-color: rgba(38,38,38,1);
+	border: 2px solid rgba(38,38,38,1);
+	border-radius: 4px;
+	padding: 0.1em 0.3em;
+
+    color: white;
+    text-align: center;
+	font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	font-variant: small-caps;
+	font-size: 0.66em;
+	text-decoration: none;
+}
+
+input[type="submit"]:hover {
+	background-color: white;
+    color: rgba(38,38,38,1);
+	cursor: pointer;
+}
+
+.flexbox2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
