@@ -13,6 +13,8 @@
       <div id="logo">
         <img src="{$BASE_URL}img/logo/logo.png" alt="SS Movies">
       </div>
+
+			{include file='common/login.tpl'}
     </header>
 
 		<nav>
