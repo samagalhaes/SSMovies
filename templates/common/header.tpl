@@ -10,11 +10,12 @@
   </head>
   <body>
     <header>
-      <div id="logo">
-        <img src="{$BASE_URL}img/logo/logo.png" alt="SS Movies">
-      </div>
-
-			{include file='common/login.tpl'}
+		<section class="flexbox2">
+		  <div id="logo">
+			<img src="{$BASE_URL}img/logo/logo.png" alt="SS Movies">
+		  </div>
+				{include file='common/login.tpl'}
+		</section>
     </header>
 
 		<nav>
