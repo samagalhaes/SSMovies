@@ -8,11 +8,12 @@
   /* Database connection */
   $conn = new PDO('pgsql:host=db.fe.up.pt;dbname=siem1742', 'siem1742', 'LrYaFMWy');
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $stmt = $conn->prepare("SET SCHEMA 'ssmovies'");
   $stmt->execute();
 
 	$smarty = new Smarty;
-	
+
 	$smarty->template_dir = $BASE_DIR . 'templates/';
 	$smarty->compile_dir = $BASE_DIR . 'templates_c/';
 
