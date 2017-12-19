@@ -18,18 +18,21 @@
 
 </section>
 
-<aside>
+<aside id="loginData">
   <h1>
     Dados de Login
   </h1>
 
-  <b>Conta de Utilizador</b>
-	<br><b>Username:</b> user
-	<br><b>Password:</b> user
-
-	<p><b>Conta de Administrador</b>
-	<br><b>Username:</b> admin
-	<br><b>Password:</b> admin
+  <section id="user">
+	  <p class="title">Conta de Utilizador</p>
+	  <p><b>Username:</b> user</p>
+	  <p><b>Password:</b> user</p>
+	</section>
+	<section id="admin">
+	  <p class="title">Conta de Administrador</p>
+	  <p><b>Username:</b> admin</p>
+	  <p><b>Password:</b> admin</p>
+  </section>
 </aside>
 
 {include file='common/footer.tpl'}
