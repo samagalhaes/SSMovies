@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-06 10:14:21
+/* Smarty version 3.1.30, created on 2017-12-20 00:07:24
   from "/usr/users2/mieec2013/up201304932/public_html/trabalhosSiem/TrabalhoPHP-2/templates/common/header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a27c2fdda9501_24931519',
+  'unifunc' => 'content_5a39a9bcb66ff3_57934789',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68c26339521bd24da68131c3cd913b78ebbcd2d2' => 
     array (
       0 => '/usr/users2/mieec2013/up201304932/public_html/trabalhosSiem/TrabalhoPHP-2/templates/common/header.tpl',
-      1 => 1512554462,
+      1 => 1513726550,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/login.tpl' => 1,
   ),
 ),false)) {
-function content_5a27c2fdda9501_24931519 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a39a9bcb66ff3_57934789 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,14 +36,15 @@ css/style.css">
   </head>
   <body>
     <header>
-      <div id="logo">
-        <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+		<section class="flexbox2">
+		  <div id="logo">
+			<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 img/logo/logo.png" alt="SS Movies">
-      </div>
-
-			<?php $_smarty_tpl->_subTemplateRender("file:common/login.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+		  </div>
+				<?php $_smarty_tpl->_subTemplateRender("file:common/login.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+		</section>
     </header>
 
 		<nav>
@@ -67,5 +68,38 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
       </ul>
     </nav>
-<?php }
+
+  
+  <?php if (isset($_smarty_tpl->tpl_vars['SUCCESS_MESSAGES']->value)) {?>
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['SUCCESS_MESSAGES']->value, 'success');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['success']->value) {
+?>
+      <div class="success"><?php echo $_smarty_tpl->tpl_vars['success']->value;?>
+</div>
+    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+  <?php }?>
+
+  <?php if (isset($_smarty_tpl->tpl_vars['SUCCESS_MESSAGES']->value)) {?>
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['SUCCESS_MESSAGES']->value, 'success');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['success']->value) {
+?>
+      <div class="success"><?php echo $_smarty_tpl->tpl_vars['success']->value;?>
+</div>
+    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+  <?php }
+}
 }
