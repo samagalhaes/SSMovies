@@ -252,7 +252,7 @@ body > aside > section
 
 .filmpreco:after
 {
-    content: 'â‚¬';
+    content: ' €';
 }
 
 .flexbox
