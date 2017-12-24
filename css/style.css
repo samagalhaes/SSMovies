@@ -1,264 +1,390 @@
-html {
-  margin: 0;
+html
+{
+    margin: 0;
 }
 
-body {
-display: grid;
-grid-template-columns: 1fr 50em 17em 1fr;
-grid-template-rows: auto auto 1fr auto;
+body
+{
+    font-family: Arial;
 
-grid-template-areas: "header header header header"
-					 "nav nav nav nav"
-                     ". content aside ."
-                     "footer footer footer footer";
+    display: grid;
 
-font-family: Arial;
-color: black;
-margin: 0;
+    margin: 0;
+
+    color: black;
+
+    grid-template-columns: 1fr 50em 17em 1fr;
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-areas: 'header header header header' 'nav nav nav nav' '. message aside . ' '. content aside .' 'footer footer footer footer';
 }
 
-header {
-grid-area: header;
+header
+{
+    grid-area: header;
 }
 
-body > nav {
-grid-area: nav;
+body > nav
+{
+    grid-area: nav;
 }
 
-section {
-grid-area: content;
+section
+{
+    grid-area: content;
 }
 
-aside {
-grid-area: aside;
+aside
+{
+    grid-area: aside;
 }
 
-footer {
-grid-area: footer;
+footer
+{
+    grid-area: footer;
 }
 
 /*** HEADER ***/
-header {
-margin: 1em 8em 1em 3em;
+
+header
+{
+    margin: 1em 8em 1em 3em;
 }
 
-header #logo img{
-height: 100px;
+header #logo img
+{
+    height: 100px;
 }
 
-body > nav {
-background-color: rgba(38,38,38,1);
-margin: 0 0;
-width: 100%;
+body > nav
+{
+    width: 100%;
+    margin: 0 0;
+
+    background-color: rgba(38, 38, 38, 1);
 }
 
-body > nav ul {
-list-style-type: none;
-margin: 0;
+body > nav ul
+{
+    font-family: 'Arial Black', Arial;
 
-font-family: 'Arial Black', Arial;
+    margin: 0;
+
+    list-style-type: none;
 }
 
-body > nav ul li {
-display: inline-block;
-padding: 0.7em 1em;
-border-right: 1px solid white;
+body > nav ul li
+{
+    display: inline-block;
+
+    padding: .7em 1em;
+
+    border-right: 1px solid white;
 }
 
-body > nav ul a {
-color: white;
-text-decoration: none;
+body > nav ul a
+{
+    text-decoration: none;
+
+    color: white;
 }
 
-body > nav ul a:hover {
-text-decoration: underline;
+body > nav ul a:hover
+{
+    text-decoration: underline;
 }
 
 /*** PAGES ***/
-body > section {
-margin: 1em 1em 0 0;
-padding: 1em;
 
-border: 1px solid black;
-border-radius: 4px;
-background-color: white;
+body > section
+{
+    margin: 1em;
+    padding: 0;
+
+    border: 1px solid black;
+    border-radius: .2em;
+    background-color: white;
 }
 
-h1 {
-font-family: 'Arial Black', Arial;
-font-size: 1em;
-color: white;
-background-color: rgba(38,38,38,1);
+h1
+{
+    font-family: 'Arial Black', Arial;
+    font-size: 1em;
 
-margin: -1em -1em 1em -1em;
-padding: 0.5em;
-box-sizing: border-box;
-}
-
-body > aside {
-margin: 1em 0 0 1em;
-border: 1px solid black;
-border-radius: 4px;
-padding: 1em;
-}
-
-#loginData{
-	font-size: 0.9em;
-}
-
-#loginData #user{
-	margin-bottom: 3em;
-}
-
-#loginData p {
-	margin: 0.5em 0;
-}
-
-.title {
-	font-family: 'Arial Black', Arial, Helvetica, sans-serif;
-	font-variant: small-caps;
-}
-
-.filmbox {
-	display: inline-block;
-	background-color: white;
-	width: 125px;
-	height:225px;
-
-	padding: 0.3em 0.3em;
-	margin: 0.5em;
-	vertical-align: top;
-	overflow: hidden;
-
-	font-size: 0.75em;
-	font-family: Arial;
-	text-align: center;
-
-	border: 1px solid;
-    border-radius: 5px;
-	border-color: rgba(38,38,38,1);
-	box-shadow: 0px 1px 1px 1px #888888;
-}
-
-.filmbox img {
-	width: 120px;
-	height: 130px;
-	border-radius: 5px;
-}
-
-.filmname {
-	text-align: left;
-	margin: 0.8em 0.5em;
-}
-
-.filmyear {
-	font-family: Arial;
-	display: inline-block;
-	width: 55%;
-	text-align: left;
-	margin: 0;
-}
-
-.filmetar {
-	background-color: rgba(242,242,242,1);
-	border-color: rgba(38,38,38,1);
-	border: 1px solid;
-	border-radius: 5px;
-	padding: 0.5em;
-	width: 2em;
-	font-size: 0.9em;
-	font-family: Arial;
-	display: inline-block;
-	width: 20%;
-	margin: 0;
-}
-
-.filmetar:before {
-	content: "M/";
-}
-
-.filmpreco {
-	margin: 1.5em 0;
-	position: relative;
-}
-
-.filmpreco:after {
-	content: "€";
-}
-
-.flexbox {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	margin: 0 0 0 0.55em;
-}
-
-#login {
-	display: inline-block;
-	width: 32%;
-	text-align: right;
-	align-self: center;
-}
-
-#login form {
-	display: inline-block;
-	padding: 0.3em;
-	text-align: right;
-	vertical-align: bottom;
-
-	background-color: white;
-	border: 1px solid black;
-	border-radius: 4px;
-}
-
-#login table, #login input[type=text], #login input[type=password] {
-	font-size: 0.8em;
-}
-
-#login input[type=submit] {
-	font-size: 0.66em;
-	margin: 0 0.2em;
-}
-
-#login p {
-	margin: 0;
-}
-
-input {
-	margin: 0.2em;
-	padding: 0.1em 0.4em;
-
-	border: 1px solid rgba(38,38,38,1);
-	border-radius: 3px;
-	text-decoration: none;
-}
-
-input[type=submit] {
-	display: inline-block;
-
-	background-color: rgba(38,38,38,1);
-	border: 2px solid rgba(38,38,38,1);
-	border-radius: 4px;
-	padding: 0.1em 0.3em;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: .5em;
 
     color: white;
+    border: 1px solid black;
+    border-radius: .2em;
+    background-color: rgba(38, 38, 38, 1);
+}
+
+body > section > section
+{
+    margin: 1em;
+}
+
+body > aside
+{
+    margin: 1em;
+    padding: 0;
+
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+body > aside > section
+{
+    margin: 1em;
+}
+
+#loginData
+{
+    font-size: .9em;
+}
+
+#loginData #user
+{
+    margin-bottom: 3em;
+}
+
+#loginData p
+{
+    margin: .5em 0;
+}
+
+.title
+{
+    font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+}
+
+.filmbox
+{
+    font-family: Arial;
+    font-size: .75em;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 125px;
+    height: 225px;
+    margin: .5em;
+    padding: .3em .3em;
+
     text-align: center;
-	font-family: 'Arial Black', Arial, Helvetica, sans-serif;
-	font-weight: bolder;
-	font-variant: small-caps;
-	font-size: 0.66em;
-	text-decoration: none;
+    vertical-align: top;
+
+    border: 1px solid;
+    border-color: rgba(38, 38, 38, 1);
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 1px 1px 1px #888;
 }
 
-input[type="submit"]:hover {
-	background-color: white;
-    color: rgba(38,38,38,1);
-	cursor: pointer;
+.filmbox > p
+{
+    margin: 0 .3em;
 }
 
-.flexbox2 {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+.filmbox img
+{
+    width: 120px;
+    height: 140px;
+
+    border-radius: 5px;
+}
+
+.filmname
+{
+    margin: .8em .5em;
+
+    text-align: left;
+}
+
+.filmbox > .years
+{
+    display: flex;
+
+    margin: .3em .3em .7em .3em;
+
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filmyear
+{
+    font-family: Arial;
+
+    margin: 0;
+
+    text-align: left;
+}
+
+.filmetar
+{
+    font-family: Arial;
+    font-size: .9em;
+
+    width: 2em;
+    width: fit-content;
+    margin: 0;
+    padding: .5em;
+
+    border: 1px solid;
+    border-color: rgba(38, 38, 38, 1);
+    border-radius: 5px;
+    background-color: rgba(242, 242, 242, 1);
+}
+
+.filmetar:before
+{
+    content: 'M/';
+}
+
+.filmpreco
+{
+    margin: 2em auto 0 auto;
+}
+
+.filmpreco:after
+{
+    content: 'â‚¬';
+}
+
+.flexbox
+{
+    display: flex;
+    flex-direction: row;
+
+    width: fit-content;
+    margin: 1em auto;
+
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#login
+{
+    display: inline-block;
+
+    width: 32%;
+
+    text-align: right;
+
+    align-self: center;
+}
+
+#login form
+{
+    display: inline-block;
+
+    padding: .3em;
+
+    text-align: right;
+    vertical-align: bottom;
+
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#login table,
+#login input[type=text],
+#login input[type=password]
+{
+    font-size: .8em;
+}
+
+#login input[type=submit]
+{
+    font-size: .66em;
+
+    margin: 0 .2em;
+}
+
+#login p
+{
+    margin: 0;
+}
+
+input
+{
+    margin: .2em;
+    padding: .1em .4em;
+
+    text-decoration: none;
+
+    border: 1px solid rgba(38, 38, 38, 1);
+    border-radius: 3px;
+}
+
+input[type=submit]
+{
+    font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+    font-size: .66em;
+    font-weight: bolder;
+    font-variant: small-caps;
+
+    display: inline-block;
+
+    padding: .1em .3em;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    border: 2px solid rgba(38, 38, 38, 1);
+    border-radius: 4px;
+    background-color: rgba(38, 38, 38, 1);
+}
+
+input[type='submit']:hover
+{
+    cursor: pointer;
+
+    color: rgba(38, 38, 38, 1);
+    background-color: white;
+}
+
+.flexbox2
+{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+
+#message {
+  grid-area: message;
+  margin: 0 1em;
+  border: 0;
+  border-radius: 0;
+}
+
+.success,
+.error
+{
+    font-size: .75em;
+
+    margin: .5em 0;
+    padding: 1em;
+
+    text-align: center;
+
+    border-radius: .4em;
+}
+
+.success
+{
+    background-color: rgb(100, 159, 108);
+}
+
+.error
+{
+    background-color: rgb(204, 136, 136);
 }
