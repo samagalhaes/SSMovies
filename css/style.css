@@ -101,7 +101,7 @@ body > section
     padding: 0;
 
     border: 1px solid black;
-    border-radius: .2em;
+    border-radius: .4em;
     background-color: white;
 }
 
@@ -117,7 +117,7 @@ h1
 
     color: white;
     border: 1px solid black;
-    border-radius: .2em;
+    border-radius: .4em;
     background-color: rgba(38, 38, 38, 1);
 }
 
@@ -132,7 +132,7 @@ body > aside
     padding: 0;
 
     border: 1px solid black;
-    border-radius: 4px;
+    border-radius: 0.4em;
 }
 
 body > aside > section
@@ -179,7 +179,7 @@ body > aside > section
 
     border: 1px solid;
     border-color: rgba(38, 38, 38, 1);
-    border-radius: 5px;
+    border-radius: 0.5em;
     background-color: white;
     box-shadow: 0 1px 1px 1px #888;
 }
@@ -194,7 +194,7 @@ body > aside > section
     width: 120px;
     height: 140px;
 
-    border-radius: 5px;
+    border-radius: 0.5em;
 }
 
 .filmname
@@ -236,7 +236,7 @@ body > aside > section
 
     border: 1px solid;
     border-color: rgba(38, 38, 38, 1);
-    border-radius: 5px;
+    border-radius: 0.5em;
     background-color: rgba(242, 242, 242, 1);
 }
 
@@ -257,11 +257,14 @@ body > aside > section
 
 .flexbox
 {
+    display: inline-block;
     display: flex;
     flex-direction: row;
 
     width: fit-content;
-    margin: 1em auto;
+    margin: 1em;
+    padding: 0;
+    text-align: justify;
 
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -288,7 +291,7 @@ body > aside > section
     vertical-align: bottom;
 
     border: 1px solid black;
-    border-radius: 4px;
+    border-radius: 0.5em;
     background-color: white;
 }
 
@@ -319,7 +322,7 @@ input
     text-decoration: none;
 
     border: 1px solid rgba(38, 38, 38, 1);
-    border-radius: 3px;
+    border-radius: 0.3em;
 }
 
 input[type=submit]
@@ -338,7 +341,7 @@ input[type=submit]
 
     color: white;
     border: 2px solid rgba(38, 38, 38, 1);
-    border-radius: 4px;
+    border-radius: 0.4em;
     background-color: rgba(38, 38, 38, 1);
 }
 
