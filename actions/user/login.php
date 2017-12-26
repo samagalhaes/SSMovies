@@ -13,7 +13,7 @@
 			$_SESSION['error_messages'][] = "Login inválido!";
 			$_SESSION['form_values'] = $_POST;
 			header('Location: '.$_SERVER['HTTP_REFERER']);
-			exit;	
+			exit;
 		}
 
 		$username = $_POST["username"];
@@ -24,6 +24,8 @@
 		if ($result['username'] !== false or password_verify($password, $result['password'])) {
 			$_SESSION['success_messages'][] = 'Login efectuado com sucesso!';
 			$_SESSION['user'] = $username;
+			$_SESSION['admin'] = isAdmin($username);
+
 			header('Location: '.$_SERVER['HTTP_REFERER']);
 			exit;
 		}
