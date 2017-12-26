@@ -33,6 +33,22 @@
       unset($_SESSION["success_messages"]);
   }
 
+  if (isset($_SESSION['user'])) {
+    $smarty->assign('user', $_SESSION['user']);
+  }
+  else {
+    $smarty->assign('user', false);
+  }
+
     /* Query main menu */
   $mainMenu = listMenuItens(0);
   $smarty->assign('mainMenu', $mainMenu);
+
+  /* Query secondary menu */
+  $secundaryMenuUser = listMenuItens(1);
+
+  $smarty->assign('secundaryMenuUser', $secundaryMenuUser);
+  if (isset($_SESSION['admin']) AND $_SESSION['admin'] === true){
+    $secundaryMenuAdmin = listmenuItens(2);
+    $smarty->assign('secundaryMenuAdmin', $secundaryMenuAdmin);
+  }
