@@ -49,3 +49,5 @@
     </form>
   </section>
 </section>
+
+{include file='common/footer.tpl'}
