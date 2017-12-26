@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="{$BASE_URL}css/style.css">
   <link rel="stylesheet" href="{$BASE_URL}css/fonts.css">
+  <link rel="stylesheet" href="{$BASE_URL}css/fontawesome-all.css">
 
 </head>
 
