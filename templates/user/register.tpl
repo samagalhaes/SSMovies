@@ -25,7 +25,7 @@
         <input type="password" name="password" placeholder="Password" required>
       </p>
       <p>
-        <input type="text" name="telephone" placeholder="Telefone" value="{if isset($FORM_VALUES)} {$FORM_VALUES.telephone} {/if}" pattern="/d{9}">
+        <input type="tel" name="telephone" placeholder="Telefone" value="{if isset($FORM_VALUES)} {$FORM_VALUES.telephone} {/if}" {literal} pattern="\d{9}" {/literal} title="Insira um contacto telefónico com 9 dígitos.">
       </p>
 
 
@@ -40,8 +40,8 @@
         <input type="text" name="address" placeholder="Morada" value="{if isset($FORM_VALUES)} {$FORM_VALUES.address} {/if}">
       </p>
       <p>
-        <input type="text" name="postcode1" value="{if isset($FORM_VALUES)} {$FORM_VALUES.postcode1} {/if}" pattern="/d{4}"> &ndash;
-        <input type="text" name="postcode2" value="{if isset($FORM_VALUES)} {$FORM_VALUES.postcode2} {/if}" pattern="/d{3}">
+        <input type="text" name="postcode1" value="{if isset($FORM_VALUES)} {$FORM_VALUES.postcode1} {/if}"  placeholder="0000" {literal} pattern="\d{4}" {/literal} title="Insira a primeira parte do código postal com 4 dígitos"> &ndash;
+        <input type="text" name="postcode2" value="{if isset($FORM_VALUES)} {$FORM_VALUES.postcode2} {/if}" placeholder="000" {literal} pattern="\d{3}" {/literal} title="Insira a segunda parte do código postal com 3 dígitos">
         <input type="text" name="locality" placeholder="Localidade" value="{if isset($FORM_VALUES)} {$FORM_VALUES.locality} {/if}">
       </p>
 

@@ -302,11 +302,16 @@ body > aside > section
     background-color: white;
 }
 
-#login table,
 #login input[type=text],
 #login input[type=password]
 {
     font-size: .8em;
+        height: 2em;
+    width: 14em;
+}
+
+#login form {
+    padding: 0.5em;
 }
 
 #login input[type=submit]
@@ -446,13 +451,15 @@ input[type=submit]
     font-weight: bold;
 }
 
-#updateData p
+#updateData p,
+#register p
 {
     margin-top: 0;
     margin-bottom: 0;
 }
 
-#updateData input
+#updateData input,
+#register input
 {
     height: 2em;
 }
@@ -467,52 +474,58 @@ input[type=submit]
     width: 20em;
 }
 
-#updateData input[name='username']
+#register input[name='email']
+{
+    width: 22.5em;
+}
+
+#updateData input[name='username'],
 {
     display: none;
 
     width: 7em;
 }
 
-#updateData input[name='telephone']
+#updateData input[name='telephone'],
+#register input[name='telephone']
 {
     width: 5.5em;
 }
 
-#updateData input[name='nif']
+#updateData input[name='nif'],
+#register input[name='nif']
 {
     width: 5.5em;
 }
 
-#updateData input[name='address']
+#updateData input[name='address'],
+#register input[name='address']
 {
     width:         available;
     width:    -moz-available;
     width: -webkit-available;
 }
 
-#updateData input[name='postcode1']
+#updateData input[name='postcode1'],
+#register input[name='postcode1']
 {
     width: 3em;
 
     text-align: center;
 }
 
-#updateData input[name='postcode2']
+#updateData input[name='postcode2'],
+#register input[name='postcode2']
 {
     width: 2em;
 
     text-align: center;
 }
 
-#updateData input[name='locality']
+#updateData input[name='locality'],
+#register input[name='locality']
 {
     width: 20em;
-}
-
-#u#updateData input[type=submit]:root
-{
-    float: right;
 }
 
 .submit
