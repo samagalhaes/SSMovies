@@ -6,6 +6,7 @@ html
 body
 {
     font-family: Arial;
+    font-size: 1em;
 
     display: grid;
 
@@ -121,6 +122,11 @@ h1
     background-color: rgba(38, 38, 38, 1);
 }
 
+h2
+{
+    border-bottom: 1px solid rgba(38,38,38,1);
+}
+
 body > section > section
 {
     margin: 1em;
@@ -132,7 +138,7 @@ body > aside
     padding: 0;
 
     border: 1px solid black;
-    border-radius: 0.4em;
+    border-radius: .4em;
 }
 
 body > aside > section
@@ -179,7 +185,7 @@ body > aside > section
 
     border: 1px solid;
     border-color: rgba(38, 38, 38, 1);
-    border-radius: 0.5em;
+    border-radius: .5em;
     background-color: white;
     box-shadow: 0 1px 1px 1px #888;
 }
@@ -194,7 +200,7 @@ body > aside > section
     width: 120px;
     height: 140px;
 
-    border-radius: 0.5em;
+    border-radius: .5em;
 }
 
 .filmname
@@ -236,7 +242,7 @@ body > aside > section
 
     border: 1px solid;
     border-color: rgba(38, 38, 38, 1);
-    border-radius: 0.5em;
+    border-radius: .5em;
     background-color: rgba(242, 242, 242, 1);
 }
 
@@ -264,6 +270,7 @@ body > aside > section
     width: fit-content;
     margin: 1em;
     padding: 0;
+
     text-align: justify;
 
     flex-wrap: wrap;
@@ -291,7 +298,7 @@ body > aside > section
     vertical-align: bottom;
 
     border: 1px solid black;
-    border-radius: 0.5em;
+    border-radius: .5em;
     background-color: white;
 }
 
@@ -322,18 +329,18 @@ input
     text-decoration: none;
 
     border: 1px solid rgba(38, 38, 38, 1);
-    border-radius: 0.3em;
+    border-radius: .3em;
 }
 
 input[type=submit]
 {
     font-family: 'Arial Black', Arial, Helvetica, sans-serif;
-    font-size: .66em;
     font-weight: bolder;
     font-variant: small-caps;
 
     display: inline-block;
 
+    box-sizing: content-box;
     padding: .1em .3em;
 
     text-align: center;
@@ -341,11 +348,11 @@ input[type=submit]
 
     color: white;
     border: 2px solid rgba(38, 38, 38, 1);
-    border-radius: 0.4em;
+    border-radius: .4em;
     background-color: rgba(38, 38, 38, 1);
 }
 
-input[type='submit']:hover
+#login input[type='submit']:hover
 {
     cursor: pointer;
 
@@ -362,11 +369,14 @@ input[type='submit']:hover
 }
 
 
-#message {
-  grid-area: message;
-  margin: 0 1em;
-  border: 0;
-  border-radius: 0;
+#message
+{
+    margin: 0 1em;
+
+    border: 0;
+    border-radius: 0;
+
+    grid-area: message;
 }
 
 .success,
@@ -390,4 +400,129 @@ input[type='submit']:hover
 .error
 {
     background-color: rgb(204, 136, 136);
+}
+
+#loginActive
+{
+    align-self: flex-end;
+}
+
+#loginActive > a
+{
+    font-weight: bold;
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+#loginActive > a:hover
+{
+    text-decoration: underline;
+}
+
+#secundaryMenu ul
+{
+    margin-left: 0;
+    padding-left: 1.5em;
+
+    list-style-type: none;
+}
+
+#secundaryMenu ul > li:before
+{
+    content: '>';
+}
+
+#secundaryMenu ul a
+{
+    text-decoration: none;
+
+    color: inherit;
+}
+
+#secundaryMenu ul a:hover
+{
+    font-weight: bold;
+}
+
+#updateData p
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#updateData input
+{
+    height: 2em;
+}
+
+#updateData input[name='name']
+{
+    width: 20em;
+}
+
+#updateData input[name='email']
+{
+    width: 20em;
+}
+
+#updateData input[name='username']
+{
+    display: none;
+
+    width: 7em;
+}
+
+#updateData input[name='telephone']
+{
+    width: 5.5em;
+}
+
+#updateData input[name='nif']
+{
+    width: 5.5em;
+}
+
+#updateData input[name='address']
+{
+    width:         available;
+    width:    -moz-available;
+    width: -webkit-available;
+}
+
+#updateData input[name='postcode1']
+{
+    width: 3em;
+
+    text-align: center;
+}
+
+#updateData input[name='postcode2']
+{
+    width: 2em;
+
+    text-align: center;
+}
+
+#updateData input[name='locality']
+{
+    width: 20em;
+}
+
+#u#updateData input[type=submit]:root
+{
+    float: right;
+}
+
+.submit
+{
+    margin-top: 1em;
+
+    text-align: right;
+}
+
+.submit input[type='submit']
+{
+    padding: .3em 1em;
 }
