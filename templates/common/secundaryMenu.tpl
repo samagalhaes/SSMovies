@@ -1,4 +1,4 @@
-<aside id="secondaryMenu">
+<aside id="secundaryMenu">
   <h1>&nbsp;</h1>
 
   <nav>
