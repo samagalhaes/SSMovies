@@ -40,6 +40,25 @@
 		$stmt->execute(array($username, $name, $email, $password, $telephone, $nif, $address, $postcode, $locality));
   }
 
+  function updateUser($name, $email, $username, $password, $telephone, $nif, $address, $postcode, $locality){
+    global $conn;
+
+    $stmt = $conn->prepare(
+      "UPDATE utilizador
+      SET
+        nome = ?,
+        email = ?,
+        password = ?,
+        telefone = ?,
+        nif = ?,
+        morada = ?,
+        codigo_postal = ?,
+        localidade= ?
+      WHERE username = ?");
+
+    $stmt->execute (array($name, $email, $password, $telephone, $nif, $address, $postcode, $locality, $username));
+  }
+
   function userData($username){
     global $conn;
 
