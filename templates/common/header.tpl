@@ -27,7 +27,7 @@
     <ul>
       {foreach $mainMenu as $menuItem}
       <li>
-        <a href="{$BASE_URL} {$menuItem.url}">{$menuItem.nome}</a>
+        <a href="{$BASE_URL}{$menuItem.url}" {if ($BASE_URL|cat:$menuItem.url == $REQUEST_URI)} class="selected" {/if}>{$menuItem.nome}</a>
       </li>
       {/foreach}
     </ul>

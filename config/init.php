@@ -22,6 +22,7 @@
   $smarty->compile_dir = $BASE_DIR . 'templates_c/';
 
   $smarty->assign('BASE_URL', $BASE_URL);
+  $smarty->assign('REQUEST_URI', $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
 
   /* Success and error messages */
   if (isset($_SESSION["error_messages"])) {

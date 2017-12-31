@@ -94,6 +94,11 @@ body > nav ul a:hover
     text-decoration: underline;
 }
 
+body > nav .selected {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 /*** PAGES ***/
 
 body > section
@@ -449,6 +454,10 @@ input[type=submit]
 #secundaryMenu ul a:hover
 {
     font-weight: bold;
+}
+
+#secundaryMenu > nav .selected {
+  font-weight: bolder;
 }
 
 #updateData p,
