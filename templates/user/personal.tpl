@@ -36,8 +36,8 @@
       <p id="id"><b>Morada: </b></p>
       <p id="address">{$userData.morada}</p>
       <p id="location">
-      {if (isset($postcode1) AND isset($postcode2))}
-        {$postcode1} &ndash; {$postcode2}
+      {if (isset($postcode))}
+        {$postcode.0} &ndash; {$postcode.1}
       {/if}
       {$userData.localidade}</p>
     </div>

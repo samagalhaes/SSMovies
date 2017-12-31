@@ -13,12 +13,9 @@
   $smarty->assign('userData', $userData);
 
   /* Separate the code post into two elements */
-  if (strcmp($userData['codigo_postal'], ' ') == 0){
-    $postcode2 = intval(intval($userData['codigo_postal'])/1000);
-    $postcode1 = intval((intval($userData['codigo_postal'])-($postcode2*1000))/1000);
-
-    $smarty->assign('postcode1', $postcode1);
-    $smarty->assign('postcode2', $postcode2);
+  if (!strcmp($userData['codigo_postal'], '') == 0){
+    $postcode = explode('-', $userData['codigo_postal']);
+    $smarty->assign('postcode', $postcode);
   }
 
   $smarty->display('user/update_data.tpl');

@@ -36,8 +36,8 @@
         <input type="text" name="address" placeholder="Morada" value="{$userData.morada}">
       </p>
       <p>
-        <input type="text" name="postcode1" value="{if isset($postcode1)} {$postcode1} {/if}" placeholder="0000" {literal} pattern="\d{4}" {/literal} title="Insira a primeira parte do código postal com 4 dígitos"> &ndash;
-        <input type="text" name="postcode2" value="{if isset($postcode2)} {$postcode2} {/if}" placeholder="000" {literal} pattern="\d{3}" {/literal} title="Insira a segunda parte do código postal com 3 dígitos">
+        <input type="text" name="postcode1" value="{if isset($postcode)} {$postcode.0} {/if}" placeholder="0000" {literal} pattern="\d{4}" {/literal} title="Insira a primeira parte do código postal com 4 dígitos"> &ndash;
+        <input type="text" name="postcode2" value="{if isset($postcode)} {$postcode.1} {/if}" placeholder="000" {literal} pattern="\d{3}" {/literal} title="Insira a segunda parte do código postal com 3 dígitos">
         <input type="text" name="locality" placeholder="Localidade" value="{$userData.localidade}">
       </p>
 

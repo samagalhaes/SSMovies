@@ -23,7 +23,7 @@
   $telephone = strip_tags($_POST["telephone"]);
   $nif = strip_tags($_POST["nif"]);
   $address = strip_tags($_POST["address"]);
-  $postcode = strip_tags($_POST["postcode1"].$_POST["postcode2"]);
+  $postcode = strip_tags($_POST["postcode1"].'-'.$_POST["postcode2"]);
   $locality = strip_tags($_POST["locality"]);
 
   try {
