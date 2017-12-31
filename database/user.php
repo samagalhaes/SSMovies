@@ -24,7 +24,7 @@
         admin = true');
     $stmt->execute(array($username));
 
-    if ($stmt->fetch != NULL)
+    if ($stmt->fetch() != NULL)
       return true;
     else
       return false;
