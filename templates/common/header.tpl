@@ -2,7 +2,8 @@
 <html>
 
 <head>
-  <title>SS Movies</title>
+  <title>SS Movies {if (isset($TITLE))} | {$TITLE} {/if} </title>
+  <link rel="icon" href="{$BASE_URL}img/logo/favicon.png">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
