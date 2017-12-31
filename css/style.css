@@ -548,3 +548,98 @@ input[type=submit]
 {
     padding: .3em 1em;
 }
+
+/* DETALHES DO FILME */
+#filmDetails
+{
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas: 'cover header buttons' 'cover sinopse sinopse' 'trailer trailer trailer';
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+#filmDetails > #filmHeader
+{
+    grid-area: header;
+}
+
+#filmDetails #filmName
+{
+    font-family: 'Arial Black', Arial;
+    font-size: 2em;
+    font-weight: bold;
+
+    margin: 0;
+}
+
+#filmDetails #filmParticulars
+{
+    font-size: .8em;
+
+    margin: 0;
+
+    color: #666;
+}
+
+#filmDetails #preco
+{
+    margin-bottom: 0;
+}
+
+#filmDetails #preco:after
+{
+    font-size: 1.2em;
+
+    content: '€';
+}
+
+#filmDetails > #sinopse
+{
+    text-align: justify;
+
+    grid-area: sinopse;
+}
+
+#filmDetails > img
+{
+    width: 150px;
+    margin-top: .8em;
+
+    border-radius: .4em;
+
+    grid-area: cover;
+}
+
+#filmDetails > #trailer
+{
+    grid-area: trailer;
+    justify-self: center;
+}
+
+#filmDetails > #trailer > iframe
+{
+    border: 2px solid rgba(38,38,38,1);
+    border-radius: .4em;
+}
+
+#filmDetails > #buttons
+{
+    grid-area: buttons;
+}
+
+#filmDetails > #buttons form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#filmDetails > #buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    padding: 0;
+    text-align: right;
+} 

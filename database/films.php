@@ -17,7 +17,7 @@
 /**
 	* Query all films
 	*/
-	
+
 	function listAllFilms (){
         global $conn;
 
@@ -28,11 +28,11 @@
 
         return $stmt->fetchAll();
     }
-	
+
 	/**
 	* Query filtered films
 	*/
-	
+
 	function filterFilms ($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar) {
 		global $conn;
 		$stmt = $conn->prepare("SELECT *
@@ -42,7 +42,25 @@
 				 AND classificacao_etaria = $cl_etar
 				 ORDER BY id DESC");
 		$stmt->execute();
-		
+
 		return $stmt->fetchAll();
 	}
+
+  /**
+   * Query film details
+   */
+   function film ($id){
+    global $conn;
+
+    $stmt = $conn->prepare(
+      "SELECT filme.id, filme.nome, ano, pontuacao_imdb, classificacao_etaria, duracao, sinopse, link_trailer, preco, quantidade_disponivel, cover, genero.nome AS genero
+      FROM filme , genero
+      WHERE
+        filme.genero = genero.id AND
+        filme.id = ?");
+
+    $stmt->execute(array($id));
+
+    return $stmt->fetch();
+   }
 ?>
