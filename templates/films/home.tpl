@@ -7,7 +7,10 @@
 
   <section class="flexbox">
     {foreach $films as $film}
-    <section class="filmbox">
+    <a href="{$BASE_URL}pages/films/film.php?id={$film.id}" class="filmbox">
+      <div class="thumb">
+        <img src="{$BASE_URL}img/films/movies-imgeffect.png" alt="">
+      </div>
       <img src="{$film.cover}" alt="{$film.nome}" height="150px">
       <p class="filmname">{$film.nome}</p>
       <div class="years">
@@ -15,7 +18,7 @@
         <span class="filmetar">{$film.classificacao_etaria}</span>
       </div>
       <p class="filmpreco">{$film.preco}</p>
-    </section>
+    </a>
     {/foreach}
   </section>
 

@@ -187,12 +187,30 @@ body > aside > section
 
     text-align: center;
     vertical-align: top;
+    text-decoration: none;
 
+    color: inherit;
     border: 1px solid;
     border-color: rgba(38, 38, 38, 1);
     border-radius: .5em;
     background-color: white;
     box-shadow: 0 1px 1px 1px #888;
+}
+
+.thumb
+{
+    position: absolute;
+
+    width: 125px;
+    height: 225px;
+
+    opacity: .5;
+
+    filter: alpha(opacity=50);
+}
+.thumb:hover
+{
+    opacity: 0;
 }
 
 .filmbox > p
@@ -311,12 +329,14 @@ body > aside > section
 #login input[type=password]
 {
     font-size: .8em;
-        height: 2em;
+
     width: 14em;
+    height: 2em;
 }
 
-#login form {
-    padding: 0.5em;
+#login form
+{
+    padding: .5em;
 }
 
 #login input[type=submit]
@@ -345,7 +365,7 @@ input
 input[type=submit]
 {
     font-family: 'Arial Black', Arial, Helvetica, sans-serif;
-    font-weight: bolder;
+    font-weight: normal;
     font-variant: small-caps;
 
     display: inline-block;
@@ -362,7 +382,7 @@ input[type=submit]
     background-color: rgba(38, 38, 38, 1);
 }
 
-#login input[type='submit']:hover
+input[type='submit']:hover
 {
     cursor: pointer;
 
