@@ -49,7 +49,12 @@
   $secundaryMenuUser = listMenuItens(1);
 
   $smarty->assign('secundaryMenuUser', $secundaryMenuUser);
-  if (isset($_SESSION['admin']) AND $_SESSION['admin'] === true){
+  if (isset($_SESSION['admin']) AND $_SESSION['admin'] == true){
     $secundaryMenuAdmin = listmenuItens(2);
     $smarty->assign('secundaryMenuAdmin', $secundaryMenuAdmin);
+
+    $smarty->assign('admin', true);
+  }
+  else {
+    $smarty->assign('admin', false);
   }
