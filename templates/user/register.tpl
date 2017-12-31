@@ -45,7 +45,9 @@
         <input type="text" name="locality" placeholder="Localidade" value="{if isset($FORM_VALUES)} {$FORM_VALUES.locality} {/if}">
       </p>
 
-      <input type="submit" name="register" value="Registar">
+      <div class="submit">
+        <input type="submit" name="register" value="Registar">
+      </div>
     </form>
   </section>
 </section>
