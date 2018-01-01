@@ -845,3 +845,62 @@ input[type='submit']:hover
     border-radius: .5em;
     background-color: #e8e8e8;
 }
+
+.list {
+	width: 100%;
+	text-align: center;
+
+	border-collapse: collapse;
+}
+
+.list img {
+	width: 70px;
+}
+
+.list .left {
+	text-align: left;
+	width: 60%;
+}
+
+.list th {
+	border-top: 2px solid rgba(38,38,38,1);
+	border-bottom: 2px solid rgba(38,38,38,1);
+}
+
+.list td {
+	padding: 5px;
+}
+
+.list tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.list tr:last-child {
+	border-bottom: 2px solid rgba(38,38,38,1);
+}
+
+.list a {
+	color: black;
+}
+
+.list a:link {
+	text-decoration: underline;
+}
+
+.list a:visited {
+	color: black;
+}
+
+.list a:hover {
+	font-weight: bold;
+}
+
+.list button, .check {
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+
+#info_client p {
+	margin: .5em 0;
+}
