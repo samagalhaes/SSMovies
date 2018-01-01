@@ -616,6 +616,31 @@ input[type='submit']:hover
     content: '€';
 }
 
+#filmDetails #green,
+#filmDetails #yellow,
+#filmDetails #red
+{
+    display: inline-block;
+
+    width: 1em;
+    height: 1em;
+
+    border-radius: .5em;
+}
+
+#filmDetails #green
+{
+    background-color: green;
+}
+#filmDetails #yellow
+{
+    background-color: yellow;
+}
+#filmDetails #red
+{
+    background-color: red;
+}
+
 #filmDetails > #sinopse
 {
     text-align: justify;

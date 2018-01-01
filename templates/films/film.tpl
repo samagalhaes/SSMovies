@@ -13,11 +13,11 @@
         {$film.nome}
       </p>
       <p id="filmParticulars">
-        {$film.ano} | M{$film.classificacao_etaria} | {$film.genero} | {$film.duracao} | IMDB {$film.pontuacao_imdb}
+        {$film.ano} | M{$film.classificacao_etaria} | {$film.genero} | {$film.duracao}min. | IMDB {$film.pontuacao_imdb}
       </p>
 
       <p id="preco">
-        {$film.preco}
+        <span id="{$available}"> </span> {$film.preco|number_format:2:',':'.'}
       </p>
     </section>
 
@@ -38,9 +38,9 @@
       </form>
       {/if}
 
-      <form action="" method="GET">
+      <form action="{$BASE_URL}actions/order/cart.php" method="GET">
         <input type="text" name="id" value="{$film.id}" hidden>
-        <input type="submit" name="buy" value="Comprar">
+        <input type="submit" name="buy" value="Comprar" {if ($available == 'red')} disabled {/if}>
       </form>
     </section>
   </section>
