@@ -21,7 +21,7 @@
 
 		$result = isLoginCorrect($username);
 
-		if ($result['username'] !== false or password_verify($password, $result['password'])) {
+		if ($result['username'] !== false AND password_verify($password, $result['password'])) {
 			$_SESSION['success_messages'][] = 'Login efectuado com sucesso!';
 			$_SESSION['user'] = $username;
 			$_SESSION['admin'] = isAdmin($username);
