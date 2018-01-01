@@ -32,6 +32,11 @@
       </li>
       {/foreach}
     </ul>
+
+    <a href="{$BASE_URL}pages/order/cart.php" id="cart">
+      <i class="fas fa-shopping-cart fa-lg"></i>
+      <span>{$CART_QT}</span>
+    </a>
   </nav>
 
   {if isset($SUCCESS_MESSAGES) OR isset($ERROR_MESSAGES)}

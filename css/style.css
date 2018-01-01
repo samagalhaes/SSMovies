@@ -48,7 +48,7 @@ footer
 
 header
 {
-    margin: 1em 8em 1em 3em;
+    margin: 1em 4em 1em 4em;
 }
 
 header #logo img
@@ -58,10 +58,16 @@ header #logo img
 
 body > nav
 {
+    display: grid;
+
     width: 100%;
     margin: 0 0;
 
     background-color: rgba(38, 38, 38, 1);
+
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: 'mainMenu search cart';
 }
 
 body > nav ul
@@ -71,6 +77,8 @@ body > nav ul
     margin: 0;
 
     list-style-type: none;
+
+    grid-area: mainMenu;
 }
 
 body > nav ul li
@@ -94,9 +102,44 @@ body > nav ul a:hover
     text-decoration: underline;
 }
 
-body > nav .selected {
-    text-decoration: underline;
+body > nav .selected
+{
     font-weight: bold;
+
+    text-decoration: underline;
+}
+
+body > nav > #cart
+{
+    margin-right: 5em;
+
+    text-decoration: none;
+
+    grid-area: cart;
+    align-self: center;
+}
+
+body > nav > #cart .fa-shopping-cart
+{
+    color: white;
+}
+
+body > nav > #cart > span
+{
+    font-size: .7em;
+    font-weight: bold;
+
+    position: relative;
+    bottom: -.3em;
+    left: -1.2em;
+
+    padding: .2em .5em;
+
+    text-decoration: none;
+
+    color: black;
+    border-radius: 1em;
+    background-color: whitesmoke;
 }
 
 /*** PAGES ***/
@@ -129,7 +172,7 @@ h1
 
 h2
 {
-    border-bottom: 1px solid rgba(38,38,38,1);
+    border-bottom: 1px solid rgba(38, 38, 38, 1);
 }
 
 body > section > section
@@ -208,6 +251,7 @@ body > aside > section
 
     filter: alpha(opacity=50);
 }
+
 .thumb:hover
 {
     opacity: 0;
@@ -398,7 +442,6 @@ input[type='submit']:hover
     justify-content: space-between;
 }
 
-
 #message
 {
     margin: 0 1em;
@@ -434,6 +477,7 @@ input[type='submit']:hover
 
 #loginActive
 {
+    justify-self: end;
     align-self: flex-end;
 }
 
@@ -476,8 +520,9 @@ input[type='submit']:hover
     font-weight: bold;
 }
 
-#secundaryMenu > nav .selected {
-  font-weight: bolder;
+#secundaryMenu > nav .selected
+{
+    font-weight: bolder;
 }
 
 #updateData p,
@@ -570,6 +615,7 @@ input[type='submit']:hover
 }
 
 /* DETALHES DO FILME */
+
 #filmDetails
 {
     display: grid;
@@ -666,7 +712,7 @@ input[type='submit']:hover
 
 #filmDetails > #trailer > iframe
 {
-    border: 2px solid rgba(38,38,38,1);
+    border: 2px solid rgba(38, 38, 38, 1);
     border-radius: .4em;
 }
 
@@ -675,16 +721,127 @@ input[type='submit']:hover
     grid-area: buttons;
 }
 
-#filmDetails > #buttons form {
+#filmDetails > #buttons form
+{
     display: flex;
+
     justify-content: space-evenly;
 }
 
-#filmDetails > #buttons button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 0.5em;
+#filmDetails > #buttons button
+{
+    margin-bottom: .5em;
     padding: 0;
+
+    cursor: pointer;
     text-align: right;
-} 
+
+    border: none;
+    background: none;
+}
+
+/*** CART ***/
+
+#cartList > section > .film
+{
+    display: grid;
+
+    margin-bottom: 1em;
+    padding: 1em;
+
+    border: 1px solid black;
+    border-radius: .5em;
+    background-color: #e8e8e8;
+
+    grid-template-columns: auto 1fr auto auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: 'cover description price qt total buttons';
+    grid-column-gap: .5em;
+    align-items: center;
+}
+
+#cartList img
+{
+    width: 5em;
+
+    border-radius: .4em;
+
+    grid-area: cover;
+}
+
+#cartList .description
+{
+    grid-area: description;
+}
+
+#cartList .description .title
+{
+    font-family: 'Arial Black', Arial;
+
+    margin: 0;
+}
+
+#cartList .description .Particulars
+{
+    font-size: .8em;
+
+    margin: 0;
+
+    color: #666;
+}
+
+#cartList .price
+{
+    grid-area: price;
+}
+
+#cartList input[type='number']
+{
+    font-family: Arial;
+    font-size: 1em;
+
+    width: 3em;
+
+    grid-area: qt;
+}
+
+#cartList .total
+{
+    padding-left: 1em;
+
+    grid-area: total;
+}
+
+#cartList .buttons
+{
+    grid-area: buttons;
+}
+
+#cartList button
+{
+    margin: 0;
+    padding: .5em 0;
+
+    border: none;
+    background: none;
+}
+
+#cartList .submit p
+{
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
+#cartList #cleanCart
+{
+    font-size: 1.2em;
+
+    margin: 2em;
+    padding: 2em;
+
+    text-align: center;
+
+    border: 1px solid black;
+    border-radius: .5em;
+    background-color: #e8e8e8;
+}

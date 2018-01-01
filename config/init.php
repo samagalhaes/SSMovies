@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  include_once('session.php');
 
   //$BASE_DIR = "/usr/users2/mieec2013/up201304932/public_html/trabalhosSiem/TrabalhoPHP-2/";
   //$BASE_URL = "https://gnomo.fe.up.pt/~up201304932/trabalhosSiem/TrabalhoPHP-2/";
@@ -23,6 +23,8 @@
 
   $smarty->assign('BASE_URL', $BASE_URL);
   $smarty->assign('REQUEST_URI', $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
+
+  $smarty->assign('CART_QT', getCartSize());
 
   /* Success and error messages */
   if (isset($_SESSION["error_messages"])) {

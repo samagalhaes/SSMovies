@@ -63,4 +63,21 @@
 
     return $stmt->fetch();
    }
+
+   function getCart()
+   {
+    global $conn;
+
+    $films = array();
+    if (isset($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $id => $qty) {
+          $film = film($id);
+          if ($film !== false) {
+            $film['qt'] = $qty;
+            $films[] = $film;
+          }
+        }
+    }
+    return $films;
+   }
 ?>
