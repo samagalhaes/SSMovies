@@ -15,7 +15,7 @@
 				<th></th>
 			</tr>
 			{foreach $encomendas as $encomenda}
-				<form method="POST" action="../../actions/encomendas/edit_estado.php?cod_encomenda={$encomenda.codigo}" autocomplete="on">
+				<form method="POST" action="{$BASE_URL}actions/encomendas/edit_estado.php?cod_encomenda={$encomenda.codigo}" autocomplete="on">
 					<tr style="text-align:center">
 						<td>
 							<a href="{$BASE_URL}pages/encomendas/gerir_encomenda.php?cod_encomenda={$encomenda.codigo}">{$encomenda.codigo}</a>
