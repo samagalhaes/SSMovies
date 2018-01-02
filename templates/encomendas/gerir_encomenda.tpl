@@ -37,7 +37,7 @@
 		</table>
 	</section>
 	<section id="estado_encomenda" style="text-align: right; padding:1em 0 1.5em 0">
-		<form method="POST" action="../../actions/encomendas/edit_estado.php?cod_encomenda={$estado.codigo}" autocomplete="on">
+		<form method="POST" action="{$BASE_URL}actions/encomendas/edit_estado.php?cod_encomenda={$estado.codigo}" autocomplete="on">
 			{html_options name=estado options=$myOptions selected=$estado.id}
 			<button class="check" type="submit" name="confirmar"><i class="fa fa-check-circle fa-lg" aria-hidden="true"></i></button>
 		</form>
