@@ -30,7 +30,7 @@
   </h1>
 
   <section>
-    <form method="POST" action="../../actions/films/filter.php" autocomplete="on">
+    <form method="POST" action="{$BASE_URL}actions/films/filter.php" autocomplete="on">
   	<table>
   		<tr>
   			<td>
