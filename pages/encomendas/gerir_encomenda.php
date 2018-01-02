@@ -3,7 +3,7 @@
   include_once($BASE_DIR.'database/encomendas.php');
   
   if(!$_SESSION['admin']) {
-		header('Location: ../../pages/films/home.php');
+		header('Location: '.$BASE_URL.'pages/films/home.php');
 		exit();
   }
   
