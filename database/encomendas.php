@@ -109,4 +109,31 @@
 		
 		return $stmt->fetch();
 	}
+
+	function checkCod($cod) {
+	    global $conn;
+
+	    $stmt = $conn->prepare(
+	      "SELECT *
+	       FROM encomenda
+	       WHERE codigo = ?");
+
+	    $stmt->execute(array($cod));
+
+	    return $stmt->rowCount($stmt);
+	   }
+
+		function checkCodAndUser($cod, $user) {
+	    global $conn;
+
+	    $stmt = $conn->prepare(
+	      "SELECT *
+	       FROM encomenda
+		   JOIN utilizador ON encomenda.utilizador = utilizador.id
+	       WHERE codigo = ? AND utilizador.username = ?");
+
+	    $stmt->execute(array($cod, $user));
+
+	    return $stmt->rowCount($stmt);
+	   }
 ?>
