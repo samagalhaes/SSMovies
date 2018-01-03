@@ -9,6 +9,13 @@
     header('Location: '.$BASE_URL.'pages/films/films.php');
   }
 
+  $checkId = checkId($_GET['id']);
+  
+  if ($checkId == 0) {
+	$_SESSION['error_messages'][] = 'O filme procurado não existe!';
+  header('Location: '.$BASE_URL.'pages/films/films.php');
+  }
+
   if ($film['quantidade_disponivel'] <= 0){
     $available = 'red';
   }
