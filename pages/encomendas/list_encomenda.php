@@ -14,6 +14,13 @@
     header('Location: '.$BASE_URL.'pages/encomendas/list_encomendas.php');
   }
 
+  $checkCodAndUser = checkCodAndUser($_GET['cod_encomenda'], $_SESSION['user']);
+  
+  if ($checkCodAndUser == 0) {
+    $_SESSION['error_messages'][] = 'O código que introduziu não é válido!';
+    header('Location: '.$BASE_URL.'pages/encomendas/list_encomendas.php');
+  }
+
   $smarty->assign('encomenda', $encomenda);
   $smarty->display('encomendas/list_encomenda.tpl');
 ?>
