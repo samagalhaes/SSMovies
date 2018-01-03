@@ -13,6 +13,13 @@
     $_SESSION['error_messages'][] = 'O código que introduziu não é válido!';
     header('Location: '.$BASE_URL.'pages/encomendas/gerir_encomendas.php');
   }
+
+  $checkCod = checkCod($_GET['cod_encomenda']);
+  
+  if ($checkCod == 0) {
+    $_SESSION['error_messages'][] = 'O código que introduziu não é válido!';
+    header('Location: '.$BASE_URL.'pages/encomendas/gerir_encomendas.php');
+  }
   
   $info = getInfo($_GET['cod_encomenda']);
   
