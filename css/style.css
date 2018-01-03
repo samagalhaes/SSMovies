@@ -921,3 +921,35 @@ input[type='submit']:hover
 {
     margin: .5em 0;
 }
+
+.flexbox3 {
+	display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+	margin-top: 1em;
+}
+
+.flexbox3 > img {
+	border: 0.4em solid white;
+	border-radius: 0.3em;
+	box-shadow: 0 1px 1px 1px #888;	
+	width: 11em;
+}
+
+.textbox {
+	border: 1px solid black;
+	border-radius: 0.3em;
+	width: 11em;
+	padding: 0.4em 1.5em;
+	font-size: 0.85em;
+	text-align: center;
+}
+
+.textbox p {
+	margin: .1em 0;
+}
+
+.about-us {
+	font-size: 0.9em;
+}
