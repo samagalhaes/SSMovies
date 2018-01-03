@@ -80,4 +80,17 @@
     }
     return $films;
    }
+
+   function checkId($id) {
+    global $conn;
+
+    $stmt = $conn->prepare(
+      "SELECT *
+       FROM filme
+       WHERE id = ?");
+
+    $stmt->execute(array($id));
+
+    return $stmt->rowCount($stmt);
+   }
 ?>
