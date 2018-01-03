@@ -11,8 +11,8 @@
 	<p>Esperamos que desfrute da sua visita!</p>
 	
 	<section class="flexbox3">
-		<img src="../../img/authors/sandro.jpg">
-		<img src="../../img/authors/sergio.jpg">
+		<img src="{$BASE_URL}img/authors/sandro.jpg">
+		<img src="{$BASE_URL}img/authors/sergio.jpg">
 	</section>
 	
 	<section class="flexbox3">
