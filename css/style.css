@@ -188,6 +188,8 @@ body > aside
 
     border: 1px solid black;
     border-radius: .4em;
+	
+    background-color: white;
 }
 
 body > aside > section
@@ -953,4 +955,12 @@ input[type='submit']:hover
 
 .about-us {
 	font-size: 0.9em;
+}
+
+.report {
+	font-size: 0.9em;
+}
+
+.report p {
+	margin-bottom: 2em;
 }
