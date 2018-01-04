@@ -27,3 +27,5 @@
 	</section>
   </section>
 </section>
+
+{include file='common/footer.tpl'}
