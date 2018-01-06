@@ -4,7 +4,7 @@
 
   // Check if the user is admin
   if (!isset($_SESSION['admin']) OR ($_SESSION['admin'] !== true)){
-    header('Location: '.$BASE_URL);
+    header('Location: '.$INIT_PAGE);
     exit;
   }
 
@@ -12,7 +12,7 @@
   if (($_POST['title'] == '') OR ($_POST['year'] == '') OR ($_POST['classEtaria'] == '') OR ($_POST['duration'] == '') OR ($_POST['genre'] == '') OR ($_POST['trailer'] == '') OR ($_POST['sinopse'] == '') OR ($_POST['price'] == '') OR ($_POST['qt'] == '') OR $_FILES['cover'] == ''){
     $_SESSION['form_values'] = $_POST;
     $_SESSION['error_messages'][] = 'Por favor, preencha todos os campos!';
-//    header('Location: '.$BASE_URL.'pages/films/addFilm.php');
+    header('Location: '.$BASE_URL.'pages/films/addFilm.php');
     exit;
   }
 

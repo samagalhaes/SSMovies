@@ -29,7 +29,7 @@
   try {
       createUser($name, $email, $username, $password, $telephone, $nif, $address, $postcode, $locality);
       $_SESSION["success_messages"][] = 'Utilizador registado com sucesso!';
-      header('Location: ' . $BASE_URL);
+      header('Location: ' . $INIT_PAGE);
   } catch (PDOException $error) {
       if (strpos($error->getMessage(), 'username_pkey') !== false) {
           $_SESSION['error_messages'][] = 'Nome de utilizador duplicado!';
@@ -44,5 +44,5 @@
       exit;
   }
 
-  header('Location: '.$BASE_URL);
+  header('Location: '.$INIT_PAGE);
 ?>

@@ -4,7 +4,7 @@
 
   // Check if the user is admin
   if (!isset($_SESSION['admin']) OR ($_SESSION['admin'] !== true)){
-    header('Location: '.$BASE_URL);
+    header('Location: '.$INIT_PAGE);
     exit;
   }
 
@@ -18,7 +18,7 @@
     }
 
     $_SESSION['success_messages'][] = 'Filme apagado com sucesso!';
-    header('Location: '.$BASE_URL);
+    header('Location: '.$INIT_PAGE);
     exit;
   }
 

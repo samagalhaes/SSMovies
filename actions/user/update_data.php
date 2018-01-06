@@ -3,7 +3,7 @@
   include_once($BASE_DIR.'database/user.php');
 
   if (!isset($_SESSION['user'])){
-    header('Location: ' . $BASE_URL);
+    header('Location: ' . $INIT_PAGE);
     exit;
   }
 

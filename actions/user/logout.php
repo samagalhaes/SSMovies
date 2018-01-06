@@ -4,5 +4,6 @@
   unset($_SESSION['user']);
   unset($_SESSION['admin']);
 
-  header('Location: '.$BASE_URL);
+  $_SESSION['success_messages'][] = 'Logout efectuado com sucesso!';
+  header('Location: '.$INIT_PAGE);
 ?>

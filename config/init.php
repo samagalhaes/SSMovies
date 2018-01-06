@@ -5,6 +5,7 @@
   //$BASE_URL = "https://gnomo.fe.up.pt/~up201304932/trabalhosSiem/TrabalhoPHP-2/";
   $BASE_DIR = "C:\www\TrabalhoPHP-2/";
   $BASE_URL = "http://localhost/TrabalhoPHP-2/";
+  $INIT_PAGE = $BASE_URL.'pages/films/home.php';
 
   include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
   include_once($BASE_DIR . 'database/menus.php');
@@ -22,6 +23,7 @@
   $smarty->compile_dir = $BASE_DIR . 'templates_c/';
 
   $smarty->assign('BASE_URL', $BASE_URL);
+  $smarty->assign('INIT_PAGE', $INIT_PAGE);
   $smarty->assign('REQUEST_URI', $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
 
   $smarty->assign('CART_QT', getCartSize());

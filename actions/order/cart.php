@@ -118,6 +118,6 @@
     /* Clear cart */
     unset($_SESSION['cart']);
     $_SESSION['success_messages'][] = 'Compra efetuada com sucesso!';
-    header('Location: '.$BASE_URL);
+    header('Location: '.$INIT_PAGE);
   }
 ?>

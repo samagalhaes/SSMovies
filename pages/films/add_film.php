@@ -3,7 +3,7 @@
 	include_once($BASE_DIR.'database/films.php');
 
   if (!(isset($_SESSION['admin'])) OR ($_SESSION['admin'] == false)){
-    header('Location: '.$BASE_URL);
+    header('Location: '.$INIT_PAGE);
     exit;
   }
 

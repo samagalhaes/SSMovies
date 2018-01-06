@@ -8,7 +8,7 @@
     $films = getCart();
   } catch (PDOException $error) {
     $_SESSION['error_messages'][] = 'Erro ao listar o carrinho de compras!';
-    header('Location: '.$BASE_URL);
+    header('Location: '.$INIT_PAGE);
     exit;
   }
 
