@@ -19,8 +19,20 @@
     * Query all films
     */
 
-    function listAllFilms()
-    {
+    function listAllFilms ($inicio, $limite){
+        global $conn;
+
+        $stmt = $conn->prepare("SELECT *
+                                FROM filme
+                                ORDER BY id DESC
+								OFFSET $inicio
+								LIMIT $limite");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+	
+	function filmCount (){
         global $conn;
 
         $stmt = $conn->prepare("SELECT *
@@ -28,19 +40,31 @@
                                 ORDER BY id DESC");
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->rowCount($stmt);
     }
 
-    /**
-    * Query filtered films
-    */
+	/**
+	* Query filtered films
+	*/
 
-    function filterFilms($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar, $search)
-    {
-        global $conn;
+	function filterFilms ($inicio, $limite, $ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
+			     FROM filme
+				 WHERE ano = $ano
+				 AND (genero = $genero1 OR genero = $genero2 OR genero = $genero3  OR genero = $genero4  OR genero = $genero5  OR genero = $genero6  OR genero = $genero7  OR genero = $genero8  OR genero = $genero9  OR genero = $genero10  OR genero = $genero11  OR genero = $genero12  OR genero = $genero13  OR genero = $genero14  OR genero = $genero15  OR genero = $genero16  OR genero = $genero17  OR genero = $genero18  OR genero = $genero19  OR genero = $genero20  OR genero = $genero21)
+				 AND classificacao_etaria = $cl_etar
+				 ORDER BY id DESC
+				 OFFSET $inicio
+				 LIMIT $limite");
+		$stmt->execute();
 
-        if ($search == NULL){
-        $stmt = $conn->prepare("SELECT *
+		return $stmt->fetchAll();
+	}
+	
+	function filteredFilmCount ($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar, $search) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
 			     FROM filme
 				 WHERE ano = $ano
 				 AND (genero = $genero1 OR genero = $genero2 OR genero = $genero3  OR genero = $genero4  OR genero = $genero5  OR genero = $genero6  OR genero = $genero7  OR genero = $genero8  OR genero = $genero9  OR genero = $genero10  OR genero = $genero11  OR genero = $genero12  OR genero = $genero13  OR genero = $genero14  OR genero = $genero15  OR genero = $genero16  OR genero = $genero17  OR genero = $genero18  OR genero = $genero19  OR genero = $genero20  OR genero = $genero21)
@@ -81,8 +105,8 @@
         $stmt->execute(array('%'.$search.'%', '%'.$search.'%'));
       }
 
-        return $stmt->fetchAll();
-    }
+		return $stmt->rowCount($stmt);
+	}
 
   /**
    * Query film details
