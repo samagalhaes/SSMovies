@@ -37,9 +37,9 @@
 	  unset($_SESSION["cl_etar"]);
   }
   $inicio = ($page-1) * $limite;
-  
+
   if (!isset($_SESSION["ano"]) AND !isset($_SESSION["genero1"]) AND !isset($_SESSION["genero2"]) AND !isset($_SESSION["genero3"]) AND !isset($_SESSION["genero4"]) AND !isset($_SESSION["genero5"]) AND !isset($_SESSION["genero6"]) AND !isset($_SESSION["genero7"]) AND !isset($_SESSION["genero8"]) AND !isset($_SESSION["genero9"]) AND !isset($_SESSION["genero10"]) AND !isset($_SESSION["genero11"]) AND !isset($_SESSION["genero12"]) AND !isset($_SESSION["genero13"]) AND !isset($_SESSION["genero14"]) AND !isset($_SESSION["genero15"]) AND !isset($_SESSION["genero16"]) AND !isset($_SESSION["genero17"]) AND !isset($_SESSION["genero18"]) AND !isset($_SESSION["genero19"]) AND !isset($_SESSION["genero20"]) AND !isset($_SESSION["genero21"]) AND !isset($_SESSION["cl_etar"])) {
-    
+
 	  $num_registos = filmCount();
 	  $paginas_totais = ceil($num_registos / $limite);
 
@@ -47,7 +47,7 @@
       $films = search(strip_tags($_GET['search']));
     }
     else {
-      $films = listAllFilms();
+      $films = listAllFilms($inicio, $limite);
     }
 
   	$smarty->assign ('films', $films);
@@ -77,29 +77,29 @@
 	$genero20 = $_SESSION["genero20"];
 	$genero21 = $_SESSION["genero21"];
 	$cl_etar = $_SESSION["cl_etar"];
-	
-	$num_registos = filteredFilmCount($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar);
+
+  $search = (isset($_GET['search'])) ? strip_tags($_GET['search']) : NULL;
+
+	$num_registos = filteredFilmCount($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar, $search);
 	$paginas_totais = ceil($num_registos / $limite);
 
-    $search = (isset($_GET['search'])) ? strip_tags($_GET['search']) : NULL;
-
-  	$films = filterFilms($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar, $search);
+	$films = filterFilms($inicio, $limite, $ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar, $search);
 
   	$smarty->assign ('films', $films);
   }
-  
+
   if($paginas_totais > 0) {
 		if ($page > $paginas_totais) {
 			$_SESSION['error_messages'][] = 'Essa página não existe!';
 			header('Location: '.$BASE_URL.'pages/films/films.php?page=1');
 		}
   }
-  
+
   if ($num_registos == 0) {
-	$_SESSION['error_messages'][] = 'Não existem filmes com esses critérios!';
+	  $_SESSION['error_messages'][] = 'Não existem filmes com esses critérios!';
     header('Location: '.$BASE_URL.'pages/films/films.php');
   }
-  
+
   $smarty->assign('paginas_totais', $paginas_totais);
 
   if (isset($_GET['search'])) {
