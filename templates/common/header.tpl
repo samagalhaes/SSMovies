@@ -33,6 +33,11 @@
       {/foreach}
     </ul>
 
+    <form id="search" action="{$BASE_URL}pages/films/films.php" method="GET">
+      <input type="text" name="search" value="" placeholder="Pesquisar">
+      <button type="submit" name="searchButton"><i class="fas fa-search fa-lg"></i></button>
+    </form>
+
     <a href="{$BASE_URL}pages/order/cart.php" id="cart">
       <i class="fas fa-shopping-cart fa-lg"></i>
       <span>{$CART_QT}</span>

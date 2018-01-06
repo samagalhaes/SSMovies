@@ -3,64 +3,74 @@
   include_once($BASE_DIR . 'database/films.php');
 
   if (!isset($_SESSION["ano"]) AND !isset($_SESSION["genero1"]) AND !isset($_SESSION["genero2"]) AND !isset($_SESSION["genero3"]) AND !isset($_SESSION["genero4"]) AND !isset($_SESSION["genero5"]) AND !isset($_SESSION["genero6"]) AND !isset($_SESSION["genero7"]) AND !isset($_SESSION["genero8"]) AND !isset($_SESSION["genero9"]) AND !isset($_SESSION["genero10"]) AND !isset($_SESSION["genero11"]) AND !isset($_SESSION["genero12"]) AND !isset($_SESSION["genero13"]) AND !isset($_SESSION["genero14"]) AND !isset($_SESSION["genero15"]) AND !isset($_SESSION["genero16"]) AND !isset($_SESSION["genero17"]) AND !isset($_SESSION["genero18"]) AND !isset($_SESSION["genero19"]) AND !isset($_SESSION["genero20"]) AND !isset($_SESSION["genero21"]) AND !isset($_SESSION["cl_etar"])) {
-    
-	$films = listAllFilms();
-	
-	$smarty->assign ('films', $films);
+
+    if (isset($_GET['search'])){
+      $films = search(strip_tags($_GET['search']));
+    }
+    else {
+      $films = listAllFilms();
+    }
+
+  	$smarty->assign ('films', $films);
   }
-  
+
   else {
-	$ano = $_SESSION["ano"];
-	unset($_SESSION["ano"]);
-	$genero1 = $_SESSION["genero1"];
-	unset($_SESSION["genero1"]);
-	$genero2 = $_SESSION["genero2"];
-	unset($_SESSION["genero2"]);
-	$genero3 = $_SESSION["genero3"];
-	unset($_SESSION["genero3"]);
-	$genero4 = $_SESSION["genero4"];
-	unset($_SESSION["genero4"]);
-	$genero5 = $_SESSION["genero5"];
-	unset($_SESSION["genero5"]);
-	$genero6 = $_SESSION["genero6"];
-	unset($_SESSION["genero6"]);
-	$genero7 = $_SESSION["genero7"];
-	unset($_SESSION["genero7"]);
-	$genero8 = $_SESSION["genero8"];
-	unset($_SESSION["genero8"]);
-	$genero9 = $_SESSION["genero9"];
-	unset($_SESSION["genero9"]);
-	$genero10 = $_SESSION["genero10"];
-	unset($_SESSION["genero10"]);
-	$genero11 = $_SESSION["genero11"];
-	unset($_SESSION["genero11"]);
-	$genero12 = $_SESSION["genero12"];
-	unset($_SESSION["genero12"]);
-	$genero13 = $_SESSION["genero13"];
-	unset($_SESSION["genero13"]);
-	$genero14 = $_SESSION["genero14"];
-	unset($_SESSION["genero14"]);
-	$genero15 = $_SESSION["genero15"];
-	unset($_SESSION["genero15"]);
-	$genero16 = $_SESSION["genero16"];
-	unset($_SESSION["genero16"]);
-	$genero17 = $_SESSION["genero17"];
-	unset($_SESSION["genero17"]);
-	$genero18 = $_SESSION["genero18"];
-	unset($_SESSION["genero18"]);
-	$genero19 = $_SESSION["genero19"];
-	unset($_SESSION["genero19"]);
-	$genero20 = $_SESSION["genero20"];
-	unset($_SESSION["genero20"]);
-	$genero21 = $_SESSION["genero21"];
-	unset($_SESSION["genero21"]);
-	$cl_etar = $_SESSION["cl_etar"];
-	unset($_SESSION["cl_etar"]);
-	
-	
-	$films = filterFilms($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar);
-	
-	$smarty->assign ('films', $films);
+  	$ano = $_SESSION["ano"];
+  	unset($_SESSION["ano"]);
+  	$genero1 = $_SESSION["genero1"];
+  	unset($_SESSION["genero1"]);
+  	$genero2 = $_SESSION["genero2"];
+  	unset($_SESSION["genero2"]);
+  	$genero3 = $_SESSION["genero3"];
+  	unset($_SESSION["genero3"]);
+  	$genero4 = $_SESSION["genero4"];
+  	unset($_SESSION["genero4"]);
+  	$genero5 = $_SESSION["genero5"];
+  	unset($_SESSION["genero5"]);
+  	$genero6 = $_SESSION["genero6"];
+  	unset($_SESSION["genero6"]);
+  	$genero7 = $_SESSION["genero7"];
+  	unset($_SESSION["genero7"]);
+  	$genero8 = $_SESSION["genero8"];
+  	unset($_SESSION["genero8"]);
+  	$genero9 = $_SESSION["genero9"];
+  	unset($_SESSION["genero9"]);
+  	$genero10 = $_SESSION["genero10"];
+  	unset($_SESSION["genero10"]);
+  	$genero11 = $_SESSION["genero11"];
+  	unset($_SESSION["genero11"]);
+  	$genero12 = $_SESSION["genero12"];
+  	unset($_SESSION["genero12"]);
+  	$genero13 = $_SESSION["genero13"];
+  	unset($_SESSION["genero13"]);
+  	$genero14 = $_SESSION["genero14"];
+  	unset($_SESSION["genero14"]);
+  	$genero15 = $_SESSION["genero15"];
+  	unset($_SESSION["genero15"]);
+  	$genero16 = $_SESSION["genero16"];
+  	unset($_SESSION["genero16"]);
+  	$genero17 = $_SESSION["genero17"];
+  	unset($_SESSION["genero17"]);
+  	$genero18 = $_SESSION["genero18"];
+  	unset($_SESSION["genero18"]);
+  	$genero19 = $_SESSION["genero19"];
+  	unset($_SESSION["genero19"]);
+  	$genero20 = $_SESSION["genero20"];
+  	unset($_SESSION["genero20"]);
+  	$genero21 = $_SESSION["genero21"];
+  	unset($_SESSION["genero21"]);
+  	$cl_etar = $_SESSION["cl_etar"];
+  	unset($_SESSION["cl_etar"]);
+
+    $search = (isset($_GET['search'])) ? strip_tags($_GET['search']) : NULL;
+
+  	$films = filterFilms($ano, $genero1, $genero2, $genero3, $genero4, $genero5, $genero6, $genero7, $genero8, $genero9, $genero10, $genero11, $genero12, $genero13, $genero14, $genero15, $genero16, $genero17, $genero18, $genero19, $genero20, $genero21, $cl_etar, $search);
+
+  	$smarty->assign ('films', $films);
+  }
+
+  if (isset($_GET['search'])) {
+    $smarty->assign('search', strip_tags($_GET['search']));
   }
 
   $smarty->display('films/films.tpl');

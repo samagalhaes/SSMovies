@@ -30,7 +30,7 @@
   </h1>
 
   <section>
-    <form method="POST" action="{$BASE_URL}actions/films/filter.php" autocomplete="on">
+    <form method="POST" action="{$BASE_URL}actions/films/filter.php{if isset($search)}?search={$search}{/if}" autocomplete="on">
   	<table>
   		<tr>
   			<td>
@@ -190,7 +190,7 @@
   	</table>
 
   	<div class="submit">
-  		<input type="submit" name="filtrar" value="Filtrar"/>
+  		<input type="submit" name="filtrar" value="Filtrar">
   	</div>
     </form>
   </section>
