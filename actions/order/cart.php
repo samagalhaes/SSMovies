@@ -98,7 +98,7 @@
 
       /* Add film to order */
       try {
-        addFilm($order['codigo'], $filmId, $qt);
+        addFilmCart($order['codigo'], $filmId, $qt);
       } catch (PDOException $error) {
         $_SESSION['error_messages'][] = $film['nome'].': erro ao adicionar à sua compra!';
         header('Location: '.$BASE_URL.'pages/order/cart.php');

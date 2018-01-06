@@ -53,7 +53,7 @@
     return $stmt->fetch();
   }
 
-  function addFilm ($cod, $id, $qt)
+  function addFilmCart ($cod, $id, $qt)
   {
     global $conn;
 
