@@ -5,12 +5,12 @@
 	$estado = $_POST["estado"];
 	
 	if(!$_SESSION['admin']) {
-		header('Location: ../../pages/films/home.php');
+		header('Location: '.$BASE_URL.'pages/films/home.php');
 		exit();
 	}
 	
 	if (!is_numeric($_GET['cod_encomenda'])) {
-		header('Location: ../../pages/encomendas/gerir_encomendas.php');
+		header('Location: '.$BASE_URL.'pages/encomendas/gerir_encomendas.php');
 		exit();
 	}
 	else $cod_encomenda = $_GET['cod_encomenda'];
@@ -24,7 +24,7 @@
 			addFinalDate ($cod_encomenda, 1);
 		}
 
-		header('Location: ../../pages/encomendas/gerir_encomendas.php');
+		header('Location: '.$BASE_URL.'pages/encomendas/gerir_encomendas.php');
 	}
 
 

@@ -3,10 +3,11 @@ html
     margin: 0;
 }
 
-body
+body:not(.index)
 {
     font-family: Arial;
     font-size: 1em;
+    background-color: rgba(242,242,242,1);
 
     display: grid;
 
@@ -144,7 +145,7 @@ body > nav > #cart > span
 
 /*** PAGES ***/
 
-body > section
+body:not(.index) > section
 {
     margin: 1em;
     padding: 0;
@@ -187,6 +188,8 @@ body > aside
 
     border: 1px solid black;
     border-radius: .4em;
+	
+    background-color: white;
 }
 
 body > aside > section
@@ -926,6 +929,119 @@ input[type='submit']:hover
 #info_client p
 {
     margin: .5em 0;
+}
+
+.flexbox3 {
+	display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+	margin-top: 1em;
+}
+
+.flexbox3 > img {
+	border: 0.4em solid white;
+	border-radius: 0.3em;
+	box-shadow: 0 1px 1px 1px #888;	
+	width: 11em;
+}
+
+.textbox {
+	border: 1px solid black;
+	border-radius: 0.3em;
+	width: 11em;
+	padding: 0.4em 1.5em;
+	font-size: 0.85em;
+	text-align: center;
+}
+
+.textbox p {
+	margin: .1em 0;
+}
+
+.about-us {
+	font-size: 0.9em;
+}
+
+.report {
+	font-size: 0.9em;
+}
+
+.report p {
+	margin-bottom: 2em;
+}
+
+/*** INDEX PAGE ***/
+
+.index {
+	background-color: rgba(242,242,242,1);
+	padding: 3em 3em 0 3em;
+	text-align: center;
+}
+
+.index > .index-logo img {
+	height: 9em;
+}
+
+.index-button
+{
+	margin: 1em 0;
+	
+    font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+    font-weight: strong;
+    font-variant: small-caps;
+	font-size: 1.3em;
+
+    display: inline-block;
+
+    box-sizing: content-box;
+    padding: .35em 2.5em;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    border: 2px solid rgba(38, 38, 38, 1);
+    border-radius: .2em;
+    background-color: rgba(38, 38, 38, 1);
+}
+
+.index-button:hover {
+	cursor: pointer;
+	
+	color: rgba(38, 38, 38, 1);
+    background-color: white;
+}
+
+.index-flexbox {
+	display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+	margin: 1em 0;
+}
+
+.index-flexbox > img {
+	border: 0.4em solid white;
+	border-radius: 0.3em;
+	box-shadow: 0 1px 1px 1px #888;
+	width: 10em;
+}
+
+.index-textbox {
+	margin: 0;
+	font-family: Arial;
+	border: 1px solid black;
+	border-radius: 0.3em;
+	width: 11.25em;
+	padding: 0.4em 1.5em;
+	font-size: 0.75em;
+	text-align: center;
+	background-color: white;
+}
+
+.index-textbox p {
+	margin: .1em 0;
 }
 
 /*** ADD FILM ***/

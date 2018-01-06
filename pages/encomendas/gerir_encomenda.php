@@ -3,13 +3,20 @@
   include_once($BASE_DIR.'database/encomendas.php');
   
   if(!$_SESSION['admin']) {
-		header('Location: ../../pages/films/home.php');
+		header('Location: '.$BASE_URL.'pages/films/home.php');
 		exit();
   }
   
   try {
     $encomenda = gerirEncomenda($_GET['cod_encomenda']);
   } catch (\Exception $e) {
+    $_SESSION['error_messages'][] = 'O código que introduziu não é válido!';
+    header('Location: '.$BASE_URL.'pages/encomendas/gerir_encomendas.php');
+  }
+
+  $checkCod = checkCod($_GET['cod_encomenda']);
+  
+  if ($checkCod == 0) {
     $_SESSION['error_messages'][] = 'O código que introduziu não é válido!';
     header('Location: '.$BASE_URL.'pages/encomendas/gerir_encomendas.php');
   }
