@@ -9,11 +9,11 @@
     header('Location: '.$BASE_URL.'pages/films/films.php');
   }
 
-  if ($film['quantidade_disponivel'] <= 0){
-    $available = 'red';
-  }
   if ($film['quantidade_disponivel'] <= 10) {
     $available = 'yellow';
+  }
+  if ($film['quantidade_disponivel'] <= 0){
+    $available = 'red';
   }
   else {
     $available = 'green';
