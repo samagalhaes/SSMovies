@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="{$BASE_URL}css/fonts.css">
   <link rel="stylesheet" href="{$BASE_URL}css/fontawesome-all.css">
 
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="{$BASE_URL}javascript/main.js"></script>
+
 </head>
 
 <body>
