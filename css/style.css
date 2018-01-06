@@ -395,8 +395,12 @@ body > aside > section
     margin: 0;
 }
 
-input
+input,
+select,
+textarea
 {
+    font-family: Arial;
+
     margin: .2em;
     padding: .1em .4em;
 
@@ -533,7 +537,9 @@ input[type='submit']:hover
 }
 
 #updateData input,
-#register input
+#register input,
+#addFilm input,
+#addFilm select
 {
     height: 2em;
 }
@@ -920,4 +926,83 @@ input[type='submit']:hover
 #info_client p
 {
     margin: .5em 0;
+}
+
+/*** ADD FILM ***/
+
+#addFilm input[name='title']
+{
+    display: block;
+
+    width:         available;
+    width:    -moz-available;
+    width: -webkit-available;
+}
+
+#addFilm #year input
+{
+    width: 3em;
+
+    text-align: center;
+}
+
+#addFilm #duration input
+{
+    width: 2.5em;
+
+    text-align: center;
+}
+#addFilm #imdb input
+{
+    width: 2.5em;
+
+    text-align: center;
+}
+
+#addFilm #cover
+{
+    display: block;
+
+    margin-top: 1em;
+}
+#addFilm #cover input
+{
+    width: 20em;
+}
+
+#addFilm #trailer
+{
+    display: block;
+}
+#addFilm #trailer input
+{
+    width: 19.8em;
+}
+
+#addFilm #sinopse
+{
+    display: block;
+
+    margin: 1em 0;
+}
+#addFilm #sinopse textarea
+{
+    display: block;
+
+    width:         available;
+    width:    -moz-available;
+    width: -webkit-available;
+}
+
+#addFilm #price input
+{
+    width: 4em;
+
+    text-align: center;
+}
+#addFilm #qt input
+{
+    width: 3em;
+
+    text-align: center;
 }
