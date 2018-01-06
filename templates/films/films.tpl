@@ -21,6 +21,14 @@
 	</a>
 	{/foreach}
   </section>
+  
+  <section class="page-links">
+	{if $paginas_totais > 1}
+		{for $foo=1 to $paginas_totais}
+			<a href="{$BASE_URL}pages/films/films.php?page={$foo}">{$foo}</a>
+		{/for}
+	{/if}
+  </section>
 
 </section>
 
