@@ -372,9 +372,12 @@ input[type='submit']:hover {
 
 #message {
   margin: 0 1em;
+  margin-top: 0.7em;
   border: 0;
   border-radius: 0;
   grid-area: message;
+
+  background-color: inherit;
 }
 
 .success, .error {
