@@ -18,5 +18,6 @@
     $smarty->assign('postcode', $postcode);
   }
 
+  $smarty->assign('TITLE', 'Atualizar dados pessoais');
   $smarty->display('user/update_data.tpl');
 ?>

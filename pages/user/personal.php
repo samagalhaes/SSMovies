@@ -19,5 +19,6 @@
     $smarty->assign('postcode', $postcode);
   }
 
+  $smarty->assign('TITLE', 'Dados pessoais');
   $smarty->display('user/personal.tpl');
 ?>

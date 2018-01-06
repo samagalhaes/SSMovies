@@ -11,5 +11,6 @@
 		unset($_SESSION["form_values"]);
 	}
 
+	$smarty->assign('TITLE', 'Registar');
 	$smarty->display('user/register.tpl');
 ?>
