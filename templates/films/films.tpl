@@ -11,13 +11,13 @@
     <div class="thumb">
       <img src="{$BASE_URL}img/films/movies-imgeffect.png" alt="">
     </div>
-		<img src="{$film.cover}" alt="{$film.nome}" height="150px">
+		<img src="{$BASE_URL}img/films/cover/thumbnails/{$film.id}.jpg" alt="{$film.nome}" height="150px">
 		<p class="filmname">{$film.nome}</p>
 		<div class="years">
 			<span class="filmyear">{$film.ano}</span>
 			<span class="filmetar">{$film.classificacao_etaria}</span>
       </div>
-      <p class="filmpreco">{$film.preco}</p>
+      <p class="filmpreco">{$film.preco|number_format:2:',':'.'}</p>
 	</a>
 	{/foreach}
   </section>

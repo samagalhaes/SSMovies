@@ -6,7 +6,7 @@
   </h1>
 
   <section id="filmDetails">
-    <img src="{$film.cover}" alt="{$film.nome}">
+    <img src="{$BASE_URL}img/films/cover/covers/{$film.id}.jpg" alt="{$film.nome}">
 
     <section id="filmHeader">
       <p id="filmName">
@@ -26,12 +26,12 @@
     </section>
 
     <section id="trailer">
-      <iframe src="{$film.link_trailer}" frameborder="0" width="560" height="315"></iframe>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/{$film.link_trailer}?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" frameborder="0" allowfullscreen></iframe>
     </section>
 
     <section id="buttons">
       {if $admin}
-      <form class="" action="" method="post">
+      <form class="" action="{$BASE_URL}actions/films/editFilm.php" method="post">
         <input type="text" name="id" value="{$film.id}" hidden>
         <button type="submit" name="edit" value=""> <i class="fas fa-edit fa-lg"></i> </button>
         <button type="submit" name="delete" value=""> <i class="fas fa-trash-alt fa-lg"></i> </button>
