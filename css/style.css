@@ -833,6 +833,7 @@ input[type='submit']:hover
 
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 #cartList .submit p
@@ -969,6 +970,24 @@ input[type='submit']:hover
 
 .report p {
 	margin-bottom: 2em;
+}
+
+.page-links {
+	font-size: .8em;
+	margin-top: 2em;
+}
+
+.page-links a {
+	background-color: rgba(38, 38, 38, 1);
+    padding: .5em .8em;
+    text-decoration: none;
+	color: white
+}
+
+.page-links a:hover {
+	background-color:white;
+	border: 2px solid rgba(38, 38, 38, 1);
+	color: rgba(38, 38, 38, 1);
 }
 
 /*** INDEX PAGE ***/
