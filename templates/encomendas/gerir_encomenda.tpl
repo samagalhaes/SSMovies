@@ -4,7 +4,7 @@
 	<h1>
 		Gerir encomenda
 	</h1>
-	<section class=tabela_encomendas>
+	<section class="tabela_encomendas">
 		<table class="list">
 			<tr>
 				<th></th>
