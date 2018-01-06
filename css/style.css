@@ -396,6 +396,14 @@ input[type='submit']:hover {
   background-color: rgb(204, 136, 136);
 }
 
+#message .close {
+  float: right;
+
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #666;
+}
+
 #loginActive {
   justify-self: end;
   align-self: flex-end;

@@ -50,11 +50,11 @@
   {if isset($SUCCESS_MESSAGES) OR isset($ERROR_MESSAGES)}
   <section id="message">
     {if isset($SUCCESS_MESSAGES)} {foreach $SUCCESS_MESSAGES as $success}
-      <div class="success">{$success}</div>
+      <div class="success">{$success} <a class="close" href="#">&#215;</a></div>
     {/foreach} {/if}
 
     {if isset($ERROR_MESSAGES)} {foreach $ERROR_MESSAGES as $error}
-      <div class="error">{$error}</div>
+      <div class="error">{$error}<a class="close" href="#">&#215;</a></div>
     {/foreach} {/if}
   </section>
   {/if}
