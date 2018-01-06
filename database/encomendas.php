@@ -32,7 +32,7 @@
 	function gerirEncomendas() {
 		global $conn;
 
-		$stmt = $conn->prepare("SELECT id, codigo, data_inicio, data_fim, nome, designacao, estado.id
+		$stmt = $conn->prepare("SELECT codigo, data_inicio, data_fim, nome, designacao, estado.id
                   FROM encomenda
                   JOIN estado ON encomenda.estado = estado.id
 				  JOIN utilizador ON encomenda.utilizador = utilizador.id
@@ -73,7 +73,7 @@
 	 function gerirEncomenda($cod) {
 		global $conn;
 
-		$stmt = $conn->prepare("SELECT cover, nome, quantidade, preco
+		$stmt = $conn->prepare("SELECT id, cover, nome, quantidade, preco
 		FROM encomenda_filme
 		JOIN filme ON encomenda_filme.id_filme = filme.id
 		WHERE encomenda_filme.cod_encomenda = ?");
