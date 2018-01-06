@@ -5,7 +5,7 @@
 		Encomendas
 	</h1>
 	<section class="tabela_encomendas">
-		<table class="list">
+		<table class="list clickable">
 			<tr>
 				<th>Código</th>
 				<th>Data de Início</th>
@@ -14,11 +14,11 @@
 				<th>Estado da Compra</th>
 			</tr>
 			{foreach $encomendas as $encomenda}
-				<tr style="text-align:center">
+				<tr style="text-align:center" onclick="window.location = '{$BASE_URL}pages/encomendas/list_encomenda.php?cod_encomenda={$encomenda.codigo}'">
 					<td>
-						<a href="{$BASE_URL}pages/encomendas/list_encomenda.php?cod_encomenda={$encomenda.codigo}">{$encomenda.codigo}</a>
+						{$encomenda.codigo}
 					</td>
-					<td> 
+					<td>
 						{$encomenda.data_inicio|date_format:"%d/%m/%y"}
 					</td>
 					<td>

@@ -12,6 +12,7 @@ body:not(.index) {
   grid-template-columns: 1fr 50em 17em 1fr;
   grid-template-rows: auto auto auto 1fr auto;
   grid-template-areas: 'header header header header' 'nav nav nav nav' '. message aside . ' '. content aside .' 'footer footer footer footer';
+  min-height: 100vh;
 }
 
 header {
@@ -714,6 +715,11 @@ input[type='submit']:hover {
 
 .list tr:last-child {
   border-bottom: 2px solid rgba(38, 38, 38, 1);
+}
+
+.clickable tr:hover td {
+  background-color: #eee;
+  cursor: pointer;
 }
 
 .list a {
