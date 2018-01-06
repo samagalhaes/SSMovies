@@ -72,7 +72,7 @@
 		$_SESSION["genero20"] = $genero20;
 		$_SESSION["genero21"] = $genero21;
 		$_SESSION["cl_etar"] = $cl_etar;
-		header("Location: ".$BASE_URL."pages/films/films.php");
+		header("Location: ".$BASE_URL."pages/films/films.php?page=1");
 	 }
 	elseif (isset($_POST["filtrar"]) AND ($genero1=="NULL" AND $genero2=="NULL" AND $genero3=="NULL" AND $genero4=="NULL" AND $genero5=="NULL" AND $genero6=="NULL" AND $genero7=="NULL" AND $genero8=="NULL" AND $genero9=="NULL" AND $genero10=="NULL" AND $genero11=="NULL" AND $genero12=="NULL" AND $genero13=="NULL" AND $genero14=="NULL" AND $genero15=="NULL" AND $genero16=="NULL" AND $genero17=="NULL" AND $genero18=="NULL" AND $genero19=="NULL" AND $genero20=="NULL" AND $genero21=="NULL")){ 
 		$_SESSION["ano"] = $ano;
@@ -98,6 +98,6 @@
 		$_SESSION["genero20"] = $genero20;
 		$_SESSION["genero21"] = $genero21;
 		$_SESSION["cl_etar"] = $cl_etar;
-	 	header("Location: ".$BASE_URL."pages/films/films.php");
+	 	header("Location: ".$BASE_URL."pages/films/films.php?page=1");
 	}
 ?>
