@@ -8,7 +8,7 @@
   <section>
     {foreach $cart as $film}
       <form class="film" action="{$BASE_URL}actions/order/cart.php" method="GET">
-        <img src="{$film.cover}" alt="{$film.nome}">
+        <img src="{$BASE_URL}img/films/cover/covers/{$film.id}.jpg" alt="{$film.nome}">
         <div class="description">
           <p class="title">{$film.nome}</p>
           <p class="Particulars">{$film.ano} | M{$film.classificacao_etaria} | {$film.genero} | {$film.duracao}min. | IMDB {$film.pontuacao_imdb}</p>

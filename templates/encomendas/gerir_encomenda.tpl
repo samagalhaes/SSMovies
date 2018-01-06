@@ -16,9 +16,9 @@
 			{foreach $encomenda as $film}
 				<tr style="text-align:center">
 					<td>
-						<img src="{$film.cover}" alt="{$film.nome}">
+						<img src="{$BASE_URL}img/films/cover/covers/{$film.id}.jpg" alt="{$film.nome}">
 					</td>
-					<td class="left"> 
+					<td class="left">
 						{$film.nome}
 					</td>
 					<td>
@@ -50,5 +50,5 @@
 			<p><b>Morada:</b> {$info.morada}</p>
 			<p><b>Código Postal:</b> {$info.codigo_postal}</p>
 	</section>
-	
+
 {include file="common/footer.tpl"}
