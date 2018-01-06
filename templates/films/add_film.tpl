@@ -42,7 +42,7 @@
 
         <select name="genre">
           {foreach $genres as $genre}
-            <option value="{$genre.id}"{if isset($FORM_VALUES)}{if ($FORM_VALUES.genre == $genre.id )}>{$genre.nome}</option>
+            <option value="{$genre.id}"{if isset($FORM_VALUES)}{if ($FORM_VALUES.genre == $genre.id )}selected{/if}{/if}>{$genre.nome}</option>
           {/foreach}
         </select>
       </span>
@@ -54,7 +54,7 @@
 
       <span id="trailer">
         Trailer
-        <input type="text" name="trailer" value="{if isset($FORM_VALUES)}{$FORM_VALUES.trailer}{/if}" placeholder="YouTube code" {literal} pattern="[a-zA-Z0-9-]+" {/literal} title="Intruduza apenas o código do YouTube" required>
+        <input type="text" name="trailer" value="{if isset($FORM_VALUES)}{$FORM_VALUES.trailer}{/if}" placeholder="YouTube code" {literal} pattern="[a-zA-Z0-9-]+" {/literal} title="Introduza apenas o código do YouTube" required>
       </span>
 
       <span id="sinopse">
