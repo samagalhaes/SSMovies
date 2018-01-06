@@ -1,6 +1,6 @@
 {include file="common/header.tpl"}
 
-<section id="list_encomendas">
+<section id="gerir_encomendas">
 	<h1>
 		Gerir encomendas
 	</h1>
