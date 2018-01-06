@@ -691,6 +691,7 @@ input[type='submit']:hover {
 
 .list img {
   width: 70px;
+  border-radius: 0.4em;
 }
 
 .list .left {
