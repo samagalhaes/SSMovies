@@ -2,7 +2,7 @@
   include_once('../../config/init.php');
   include_once($BASE_DIR . 'database/films.php');
 
-  $limite = 5;
+  $limite = 15;
   if (isset($_GET["page"])){
 	$page  = $_GET["page"];
 	if(!(is_numeric($page) == 1)) {
