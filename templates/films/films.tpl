@@ -24,9 +24,15 @@
   
   <section class="page-links">
 	{if $paginas_totais > 1}
-		{for $foo=1 to $paginas_totais}
-			<a href="{$BASE_URL}pages/films/films.php?page={$foo}">{$foo}</a>
-		{/for}
+		{if isset($search)}
+			{for $foo=1 to $paginas_totais}
+				<a href="{$BASE_URL}pages/films/films.php?page={$foo}&search={$search}">{$foo}</a>
+			{/for}
+		{else}
+			{for $foo=1 to $paginas_totais}
+				<a href="{$BASE_URL}pages/films/films.php?page={$foo}">{$foo}</a>
+			{/for}
+		{/if}
 	{/if}
   </section>
 
