@@ -17,17 +17,17 @@
 			{foreach $encomendas as $encomenda}
 				<form method="POST" action="{$BASE_URL}actions/encomendas/edit_estado.php?cod_encomenda={$encomenda.codigo}" autocomplete="on">
 					<tr style="text-align:center">
-						<td onclick="window.location = '{$BASE_URL}pages/encomendas/list_encomenda.php?cod_encomenda={$encomenda.codigo}'">
+						<td onclick="window.location = '{$BASE_URL}pages/encomendas/gerir_encomenda.php?cod_encomenda={$encomenda.codigo}'">
 							<a href="{$BASE_URL}pages/encomendas/gerir_encomenda.php?cod_encomenda={$encomenda.codigo}">{$encomenda.codigo}</a>
 						</td>
-						<td onclick="window.location = '{$BASE_URL}pages/encomendas/list_encomenda.php?cod_encomenda={$encomenda.codigo}'">
+						<td onclick="window.location = '{$BASE_URL}pages/encomendas/gerir_encomenda.php?cod_encomenda={$encomenda.codigo}'">
 							{$encomenda.data_inicio|date_format:"%d/%m/%y"}
 						</td>
-						<td onclick="window.location = '{$BASE_URL}pages/encomendas/list_encomenda.php?cod_encomenda={$encomenda.codigo}'">
+						<td onclick="window.location = '{$BASE_URL}pages/encomendas/gerir_encomenda.php?cod_encomenda={$encomenda.codigo}'">
 							{if {$encomenda.data_fim}}
 								{$encomenda.data_fim|date_format:"%d/%m/%y"}
 							{/if}
-						</td onclick="window.location = '{$BASE_URL}pages/encomendas/list_encomenda.php?cod_encomenda={$encomenda.codigo}'">
+						</td onclick="window.location = '{$BASE_URL}pages/encomendas/gerir_encomenda.php?cod_encomenda={$encomenda.codigo}'">
 						<td>
 							{$encomenda.nome}
 						</td>
