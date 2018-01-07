@@ -1043,12 +1043,7 @@ input[type='submit']:hover
     margin: .1em 0;
 }
 
-.about-us
-{
-    font-size: .9em;
-}
-
-.about-us p {
+.about-us > p {
   text-align: justify;
 }
 
