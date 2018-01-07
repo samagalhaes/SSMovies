@@ -259,7 +259,7 @@
   /*
   * Search films
   */
-  function search($searchTerm)
+  function searchCount($searchTerm)
   {
     global $conn;
 
@@ -269,6 +269,25 @@
       WHERE
         (nome ILIKE ?) OR
         (sinopse ILIKE ?)'
+    );
+
+    $stmt->execute (array('%'.$searchTerm.'%', '%'.$searchTerm.'%'));
+
+    return $stmt->rowCount($stmt);
+  }
+  
+  function search($inicio, $limite, $searchTerm)
+  {
+    global $conn;
+
+    $stmt = $conn->prepare (
+      "SELECT *
+      FROM filme
+      WHERE
+        (nome ILIKE ?) OR
+        (sinopse ILIKE ?)
+	  OFFSET $inicio
+      LIMIT $limite"
     );
 
     $stmt->execute (array('%'.$searchTerm.'%', '%'.$searchTerm.'%'));
