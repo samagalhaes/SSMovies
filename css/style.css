@@ -872,7 +872,10 @@ input[type='submit']:hover
 
     width: 3em;
 
+    text-align: center;
+
     grid-area: qt;
+    -moz-appearance: initial;
 }
 
 #cartList .total
